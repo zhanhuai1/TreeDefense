@@ -1,7 +1,7 @@
-require("Cocos2d")
-require("Cocos2dConstants")
-require("GuiConstants")
-require("AudioEngine")
+require("scripts.cc.Cocos2d")
+require("scripts.cc.Cocos2dConstants")
+require("scripts.cc.GuiConstants")
+require("scripts.cc.AudioEngine")
 
 require("scripts.BaseClass.BaseClass")
 require("scripts.Screen.MovableObj")

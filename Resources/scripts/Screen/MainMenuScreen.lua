@@ -30,23 +30,11 @@ function MainMenuScreen:Enter()
 	local btn = ccui.Button:create()
 	btn:loadTextures("start_btn_nor.png", "start_btn_sel.png", "", ccui.TextureResType.plistType)
 	btn:setPosition(g_real_visible_sz.width/2, 200)
-	btn:setPressedActionEnabled(true)
+	btn:setPressedActionEnabled(false)
 	btn:setTouchEnabled(true)
-	-- btn:setTitleFontName("Marker Felt")
-	-- btn:setTitleFontSize(32)
-	-- btn:setTitleText("PLAY")
-	-- btn:setTitleColor(cc.c3b(255, 155, 13))
 	g_game_scene:addChild(btn, Config.ZOrder.UI)
 
 	local btn_start_func = function (target, event_type)
-		-- print("!!!!!!!!Btn_Click!!!!!!!", event_type, ccui.TouchEventType.ended, ccui.TouchEventType.ended)
-		-- GlobalEventSystem:Fire(EventName.GoSelectMap)
-		-- if event_type == ccui.TouchEventType.began then
-		-- 	btn:setTitleColor(cc.c3b(255, 195, 13))
-		-- 	btn:setTitleFontSize(36)
-		-- elseif event_type == ccui.TouchEventType.canceled or event_type == ccui.TouchEventType.ended then
-		-- 	btn:setTitleColor(cc.c3b(255, 155, 13))
-		-- 	btn:setTitleFontSize(32)
 		if event_type == ccui.TouchEventType.ended then
 			print("Goto Select Map Screen= = =")
 		end

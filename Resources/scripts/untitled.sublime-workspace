@@ -35,7 +35,15 @@
 			"file": "Screen/MainMenuScreen.lua",
 			"settings":
 			{
-				"buffer_size": 2225,
+				"buffer_size": 1618,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.lua",
+			"settings":
+			{
+				"buffer_size": 4603,
 				"line_ending": "Unix"
 			}
 		}
@@ -191,15 +199,42 @@
 					"file": "Screen/MainMenuScreen.lua",
 					"settings":
 					{
-						"buffer_size": 2225,
+						"buffer_size": 1618,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								856,
-								856
+								1194,
+								1194
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 92.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "main.lua",
+					"settings":
+					{
+						"buffer_size": 4603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								493,
+								493
 							]
 						],
 						"settings":

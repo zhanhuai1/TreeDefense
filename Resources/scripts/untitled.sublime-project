@@ -2,13 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "/Users/zhanhuaijin/trunk/TreeDefense/cocos2d/cocos/scripting/lua/script"
-		},
-		{
 			"path": "/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts"
-		},
-		{
-			"path": "/Users/zhanhuaijin/trunk/TreeDefense/proj.ios_mac/CellDefense.xcodeproj"
 		}
 	]
 }
