@@ -1,12 +1,11 @@
 
 AssetsHelper = AssetsHelper or {}
-AssetsHelper._hdsd = "_hd"
 
 -----------------------------------------------------
 ----------------- RegisterAllFrames   ---------------
 -----------------------------------------------------
 function AssetsHelper.RegisterAllFrames()
-	cc.SpriteFrameCache:getInstance():addSpriteFrames("media/sheet_ui"..AssetsHelper._hdsd..".plist")
+	cc.SpriteFrameCache:getInstance():addSpriteFrames("media/sheet_ui.plist")
 end
 
 

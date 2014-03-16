@@ -6,14 +6,14 @@
         <key>texturePackerVersion</key>
         <string>3.3.1</string>
         <key>fileName</key>
-        <string>/Users/zhanhuaijin/trunk/CellDefense/raw_media/ui.tps</string>
+        <string>/Users/zhanhuaijin/trunk/TreeDefense/raw_media/ui.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
                 <key>scale</key>
                 <double>1</double>
                 <key>extension</key>
-                <string>_hd</string>
+                <string></string>
                 <key>spriteFilter</key>
                 <string></string>
                 <key>acceptFractionalValues</key>
@@ -21,26 +21,9 @@
                 <key>maxTextureSize</key>
                 <QSize>
                     <key>width</key>
-                    <int>2048</int>
+                    <int>-1</int>
                     <key>height</key>
-                    <int>2048</int>
-                </QSize>
-            </struct>
-            <struct type="AutoSDSettings">
-                <key>scale</key>
-                <double>0.5</double>
-                <key>extension</key>
-                <string>_sd</string>
-                <key>spriteFilter</key>
-                <string></string>
-                <key>acceptFractionalValues</key>
-                <false/>
-                <key>maxTextureSize</key>
-                <QSize>
-                    <key>width</key>
-                    <int>1024</int>
-                    <key>height</key>
-                    <int>1024</int>
+                    <int>-1</int>
                 </QSize>
             </struct>
         </array>
@@ -55,7 +38,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>../Resources/media/sheet_ui{v}.png</filename>
+        <filename>../Resources/media/sheet_ui.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -148,13 +131,13 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../Resources/media/sheet_ui{v}.plist</filename>
+                <filename>../Resources/media/sheet_ui.plist</filename>
             </struct>
         </map>
         <key>multiPack</key>
         <false/>
         <key>forceIdenticalLayout</key>
-        <true/>
+        <false/>
         <key>outputFormat</key>
         <enum type="SettingsBase::OutputFormat">RGBA8888</enum>
         <key>contentProtection</key>

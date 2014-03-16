@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"end",
+				"ended"
+			],
+			[
+				"_h",
+				"_hdsd"
+			],
+			[
 				"btn_1",
 				"btn_1_pressed"
 			],
@@ -27,55 +35,7 @@
 			"file": "Screen/MainMenuScreen.lua",
 			"settings":
 			{
-				"buffer_size": 2969,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Utils/AssetsHelper.lua",
-			"settings":
-			{
-				"buffer_size": 2877,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/zhanhuaijin/trunk/CellDefense/cocos2d/cocos/scripting/lua/script/GuiConstants.lua",
-			"settings":
-			{
-				"buffer_size": 2814,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "main.lua",
-			"settings":
-			{
-				"buffer_size": 4550,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Config/AllUIFrames.lua",
-			"settings":
-			{
-				"buffer_size": 4891,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Screen/MovableObj.lua",
-			"settings":
-			{
-				"buffer_size": 838,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Towers/BaseTower.lua",
-			"settings":
-			{
-				"buffer_size": 6438,
+				"buffer_size": 2225,
 				"line_ending": "Unix"
 			}
 		}
@@ -104,6 +64,15 @@
 	},
 	"file_history":
 	[
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/MainMenuScreen.lua",
+		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/GameScreen.lua",
+		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/MainMenuScreen.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/AssetsHelper.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/main.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Config/AllUIFrames.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/MovableObj.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Towers/BaseTower.lua",
+		"/Users/zhanhuaijin/trunk/CellDefense/cocos2d/cocos/scripting/lua/script/GuiConstants.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/cocos2d/cocos/scripting/lua/script/DeprecatedEnum.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/SelectMapScreen.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Towers/TowerTypesConfig.lua",
@@ -111,7 +80,6 @@
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/UI/GameInfoView.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/UI/PopupMenu.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/UI/SucceedView.lua",
-		"/Users/zhanhuaijin/trunk/CellDefense/cocos2d/cocos/scripting/lua/script/GuiConstants.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/BaseScreen.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Bullets/BulletTypesConfig.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Config/Config.lua",
@@ -128,7 +96,6 @@
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/ScreenManager.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/ShineObjManager.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/ShineObj.lua",
-		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/GameScreen.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Utils/Utils.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/cocos2d/cocos/scripting/lua/script/Cocos2dConstants.lua",
 		"/Users/zhanhuaijin/trunk/cocos2d-x-3.0beta2/template/multi-platform-lua/Resources/hello.lua",
@@ -142,7 +109,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			""
@@ -153,6 +120,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"btn1_nor.png",
+			"RegisterAllFrames",
+			"AllUIFrames",
+			"btn_1_normal",
 			"g_frames_config",
 			"CCRect",
 			"Opengl",
@@ -220,177 +191,15 @@
 					"file": "Screen/MainMenuScreen.lua",
 					"settings":
 					{
-						"buffer_size": 2969,
+						"buffer_size": 2225,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1414,
-								1414
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 188.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Utils/AssetsHelper.lua",
-					"settings":
-					{
-						"buffer_size": 2877,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								353,
-								353
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/zhanhuaijin/trunk/CellDefense/cocos2d/cocos/scripting/lua/script/GuiConstants.lua",
-					"settings":
-					{
-						"buffer_size": 2814,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								315,
-								323
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "main.lua",
-					"settings":
-					{
-						"buffer_size": 4550,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3805,
-								3805
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1450.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Config/AllUIFrames.lua",
-					"settings":
-					{
-						"buffer_size": 4891,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								406,
-								421
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "Screen/MovableObj.lua",
-					"settings":
-					{
-						"buffer_size": 838,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "Towers/BaseTower.lua",
-					"settings":
-					{
-						"buffer_size": 6438,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								856,
+								856
 							]
 						],
 						"settings":

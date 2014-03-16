@@ -40,7 +40,7 @@
             <key>size</key>
             <string>{64,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0fdc8032fd4428d7f6b42684c9a5e98f:a1424d2790ec3549e070127bd995948f:6d56e46405901c343847b595e76abbd3$</string>
+            <string>$TexturePacker:SmartUpdate:cf9afa1126f24bbbe88dd716650dcae7:a1424d2790ec3549e070127bd995948f:6d56e46405901c343847b595e76abbd3$</string>
             <key>textureFileName</key>
             <string>sheet_ui_sd.png</string>
         </dict>

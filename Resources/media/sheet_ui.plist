@@ -4,31 +4,31 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>btn1_nor.png</key>
+            <key>start_btn_nor.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{56,4},{128,48}}</string>
+                <string>{{2,168},{164,164}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{128,48}}</string>
+                <string>{{0,0},{164,164}}</string>
                 <key>sourceSize</key>
-                <string>{128,48}</string>
+                <string>{164,164}</string>
             </dict>
-            <key>btn1_sel.png</key>
+            <key>start_btn_sel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{4,4},{128,48}}</string>
+                <string>{{2,2},{164,164}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{128,48}}</string>
+                <string>{{0,0},{164,164}}</string>
                 <key>sourceSize</key>
-                <string>{128,48}</string>
+                <string>{164,164}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -36,13 +36,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>sheet_ui_hd.png</string>
+            <string>sheet_ui.png</string>
             <key>size</key>
-            <string>{128,256}</string>
+            <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:cf9afa1126f24bbbe88dd716650dcae7:a1424d2790ec3549e070127bd995948f:6d56e46405901c343847b595e76abbd3$</string>
+            <string>$TexturePacker:SmartUpdate:946618921cce831b0218a8c3ad30e618:6b99af261779549122a31636ce5370d1:f1ca8e8c15d3d955e4feb60f7092579e$</string>
             <key>textureFileName</key>
-            <string>sheet_ui_hd.png</string>
+            <string>sheet_ui.png</string>
         </dict>
     </dict>
 </plist>

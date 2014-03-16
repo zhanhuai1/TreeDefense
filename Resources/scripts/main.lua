@@ -122,7 +122,7 @@ function Start()
 	g_game_scene = CCScene:create()
 	cc.Director:getInstance():runWithScene(g_game_scene)
 
-	--创建各个Screen
+	--进入主菜单界面
 	GlobalEventSystem:Fire(EventName.GoMainMenu)
 end
 
