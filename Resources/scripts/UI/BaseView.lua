@@ -31,7 +31,7 @@ function BaseView:Open()
 	end
 	BaseView.opened_instance = self
 	self.is_open = true
-	g_game_scene:addChild(self.root_wnd, self.z_order)
+	Glo.Scene:addChild(self.root_wnd, self.z_order)
 end
 
 function BaseView:Close()

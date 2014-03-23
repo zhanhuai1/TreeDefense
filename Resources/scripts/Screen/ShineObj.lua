@@ -24,7 +24,7 @@ function ShineObj:__init(pos, angle, zorder)
 	self.sprite:setPosition(pos)
 	self:SetRotation(angle)
 
-	g_game_scene:addChild(self.sprite, zorder)
+	Glo.Scene:addChild(self.sprite, zorder)
 
 	self.target_angle = self.rotate_angle	--目标角度
 	self.last_change_rotate_time = 0		--最后一次调整目标角度的时间点，每隔几秒才进行一次调整

@@ -87,7 +87,7 @@ function GameInfoView:__init( )
 
 
 
-	g_game_scene:addChild(self.root_wnd, Config.ZOrder.UI)
+	Glo.Scene:addChild(self.root_wnd, Config.ZOrder.UI)
 
 	self:InitEvents()
 end

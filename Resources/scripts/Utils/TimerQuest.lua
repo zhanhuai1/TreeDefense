@@ -3,13 +3,13 @@ TimerQuestItem = TimerQuestItem or BaseClass()
 function TimerQuestItem:__init(func, delta_time, time_len)
 	self.func = func
 	self.delta_time = delta_time
-	self.next_time = (delta_time==-1) and -1 or g_running_time + delta_time
-	self.end_time = (time_len==-1) and -1 or g_running_time + time_len
+	self.next_time = (delta_time==-1) and -1 or Glo.RunningTime + delta_time
+	self.end_time = (time_len==-1) and -1 or Glo.RunningTime + time_len
 end
 function TimerQuestItem:Update(now_time)
 	--先执行
 	if self.next_time == -1 then
-		self.func(g_running_time)
+		self.func(Glo.RunningTime)
 	else
 		while now_time >= self.next_time 
 			self.func(self.next_time)

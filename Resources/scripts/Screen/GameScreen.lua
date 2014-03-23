@@ -35,7 +35,7 @@ function GameScreen:Enter(map_info)
 	self.touch_layer:setAnchorPoint(cc.p(0.5, 0.5))
 	self.touch_layer:setTouchEnabled(true)
 
-	g_game_scene:addChild(self.touch_layer, Config.ZOrder.Touch)
+	Glo.Scene:addChild(self.touch_layer, Config.ZOrder.Touch)
 
 	self.game_info_view = GameInfoView.New()
 

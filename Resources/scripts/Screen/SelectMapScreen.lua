@@ -13,68 +13,63 @@ function SelectMapScreen:Enter()
 	print("= = =SelectMapScreen:Enter= = =")
 	BaseScreen.Enter(self)
 
+	self.sky = AssetsHelper.CreateFrameSprite("sky.png")
+	Glo.LayerBg:addChild(self.sky)
+	local sky_frame = cc.SpriteFrameCache:getInstance():getSpriteFrame("sky.png")
+	local frame_sz = sky_frame:getOriginalSize()
+	local x_scale = Glo.VisibleRct.width / frame_sz.width
+	local y_scale = Glo.VisibleRct.height / frame_sz.height
+	local bg_scale = ((x_scale > y_scale) and x_scale or y_scale) + 0.1
+	self.sky:setScale(bg_scale)
+	self.sky:setPosition(Glo.VisibleRct.width / 2, Glo.VisibleRct.height / 2)
+
 	--加载地图信息
 	self:InitMapInfos()
 
-	--创建浮游
-	for i = 1, 20 do
-		local x = (math.random() - 0.5) * g_real_visible_sz.width 
-		local y = (math.random() - 0.5) * g_real_visible_sz.height
-		local pos = cc.p(x, y)
-		local angle = math.random() * 360
-		ShineObjManager.Instance:CreateObj(pos, angle, Config.ZOrder.Squirm+1)
-	end
-
 	--回退按钮
 	if self.btn_back == nil then
-		local normal_sprite = AssetsHelper.CreateUIScaleSprite("btn_1_normal")
-		local pressed_sprite = AssetsHelper.CreateUIScaleSprite("btn_1_pressed")
-		local label = CCLabelTTF:create("Back", "sans", 32)
-		local btn = CCControlButton:create(label, normal_sprite)
-		btn:setBackgroundSpriteForState(pressed_sprite, CCControlStateHighlighted)
-		btn:setContentSize(cc.size(170, 64))
+		local btn = ccui.Button:create()
+		btn:loadTextures("start_btn_nor.png", "start_btn_sel.png", "", ccui.TextureResType.plistType)
+		btn:setPosition(50, 50)
+		btn:setPressedActionEnabled(false)
 		btn:setTouchEnabled(true)
-		btn:setAdjustBackgroundImage(false)
-		btn:setPosition(cc.p(-g_real_visible_sz.width/2 + 130, -g_real_visible_sz.height/2 + 60))
-		g_game_scene:addChild(btn, Config.ZOrder.UI)
-
-		local btn_start_func = function (event_type, x, y)
-			GlobalEventSystem:Fire(EventName.GoMainMenu)
+		Glo.LayerUI:addChild(btn)
+		local btn_start_func = function (target, event_type)
+			if event_type == ccui.TouchEventType.ended then
+				GlobalEventSystem:Fire(EventName.GoMainMenu)
+			end
 		end
 		self.btn_back = btn
-		self.btn_back:addScriptCallBackForControlEvent(btn_start_func, CCControlEventTouchUpInside)
+		self.btn_back:addTouchEventListener(btn_start_func)
 	end
 
 	--关卡按钮
-	local posx = -g_real_visible_sz.width/2 + 150
-	local posy = g_real_visible_sz.height/2 - 50
+	local x_start = 150
+	local posx =  x_start
+	local posy = Glo.VisibleRct.height - 150
 	for y = 1, 4 do
 		for x = 1, 5 do
 			local i = 5 * (y-1) + x
 			print("== i:", i)
 			local map_info = self.map_info_list[i]
-
-			local normal_sprite = AssetsHelper.CreateUIScaleSprite("select_lv_btn_normal")
-			local pressed_sprite = AssetsHelper.CreateUIScaleSprite("select_lv_btn_pressed")
-			local disable_sprite = AssetsHelper.CreateUIScaleSprite("select_lv_btn_disable")
-			local btn = CCControlButton:create(normal_sprite)
-			btn:setBackgroundSpriteForState(pressed_sprite, CCControlStateHighlighted)
-			btn:setBackgroundSpriteForState(disable_sprite, CCControlStateDisabled)
-			btn:setContentSize(cc.size(128, 128))
-			btn:setEnabled(not map_info.locked)
-			btn:setAdjustBackgroundImage(false)
-			btn:setPosition(cc.p(posx, posy))
+			local btn = ccui.Button:create()
+			btn:loadTextures("level_icon_nor.png", "level_icon_sel.png", "level_icon_dis.png", ccui.TextureResType.plistType)
+			btn:setTouchEnabled(not map_info.locked)
+			btn:setBright(not map_info.locked)
+			btn:setPosition(posx, posy)
 			
-			local func = function(event_type, x, y)
-				GlobalEventSystem:Fire(EventName.GoGame, map_info)
+			local func = function(target, event_type)
+				if event_type == ccui.TouchEventType.ended then
+					GlobalEventSystem:Fire(EventName.GoMainMenu)
+				end
 			end
-			btn:addScriptCallBackForControlEvent(func, CCControlEventTouchUpInside)
+			btn:addTouchEventListener(func)
 			map_info.btn = btn
-			g_game_scene:addChild(btn, Config.ZOrder.UI)
+			Glo.LayerUI:addChild(btn)
 
 			posx = posx + 150
 		end
-		posx = -g_real_visible_sz.width/2 + 150
+		posx = x_start
 		posy = posy - 130
 	end
 end
@@ -83,7 +78,10 @@ function SelectMapScreen:Exit()
 	print("= = =SelectMapScreen:Exit= = =")
 	BaseScreen.Exit(self)
 
-	ShineObjManager.Instance:Clear()
+	if self.sky then
+		self.sky:removeFromParentAndCleanup(true)
+		self.sky = nil
+	end
 
 	if self.btn_back ~= nil then
 		self.btn_back:removeFromParentAndCleanup(true)

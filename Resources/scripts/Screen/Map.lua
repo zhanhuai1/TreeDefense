@@ -233,7 +233,7 @@ function Map:Update(delta_time, running_time)
 	
 	--刷新当前波的怪物
 	if self.cur_wave_info ~= nil then
-		local wave_frame = g_running_frame - self.cur_wave_info.start_frame - self.preparing_frames
+		local wave_frame = Glo.RunningFrame - self.cur_wave_info.start_frame - self.preparing_frames
 		if wave_frame >= 0 then
 			for i=self.cur_wave_info.enemy_index, self.cur_wave_info.enemy_count do
 
@@ -301,7 +301,7 @@ function Map:EnsureRenderGroup(layer_id)
 	if layer_id ~= Map.LayersConfig.BackgroundLayer then
 		if self.main_node == nil then
 			self.main_node = CCNode:create()
-			g_game_scene:addChild(self.main_node, Config.ZOrder.Map)
+			Glo.Scene:addChild(self.main_node, Config.ZOrder.Map)
 		end
 
 		local node = self.layers_node[layer_id]
@@ -314,7 +314,7 @@ function Map:EnsureRenderGroup(layer_id)
 	else
 		if self.bg_node == nil then
 			self.bg_node = CCNode:create()
-			g_game_scene:addChild(self.bg_node, Config.ZOrder.Bg)
+			Glo.Scene:addChild(self.bg_node, Config.ZOrder.Bg)
 		end
 		
 		local node = self.layers_node[layer_id]
@@ -335,9 +335,9 @@ function Map:SetCameraPos(pos)
 	local x, y, z = 0,0,0
 	x,y,z = main_camera:getEyeXYZ(x, y, z)
 
-	local min_x = g_real_visible_sz.width/2
+	local min_x = Glo.VisibleRct.width/2
 	local max_x = self.pixel_width - min_x
-	local min_y = g_real_visible_sz.height/2
+	local min_y = Glo.VisibleRct.height/2
 	local max_y = self.pixel_height - min_y
 	if pos.x < min_x then
 		pos.x = min_x
@@ -377,8 +377,8 @@ function Map:GetCameraPos()
 end
 
 function Map:IsPixelInMap(pixel_pos)
-	local half_w = g_real_visible_sz.width/2
-	local half_h = g_real_visible_sz.height/2
+	local half_w = Glo.VisibleRct.width/2
+	local half_h = Glo.VisibleRct.height/2
 	return (pixel_pos.x >= -half_w-50) and 
 		(pixel_pos.x <= half_w+50) and 
 		(pixel_pos.y >= -half_h-50) and
@@ -666,7 +666,7 @@ function Map:UpdateTile(x, y)
 	-- 	sprite:setPosition(pixel_pos)
 	-- 	cur_info.tile_sprite = sprite
 	-- 	cur_info.tile_sprite_id = value
-	-- 	g_game_scene:addChild(sprite, Map.LayersConfig.TileLayer)
+	-- 	Glo.Scene:addChild(sprite, Map.LayersConfig.TileLayer)
 	-- end
 end
 
@@ -701,7 +701,7 @@ function Map:IncreaseWave()
 	-- {enemy_index = 1, start_frame = 0, enemy_count = 0, enemy_list = {}}
 	self.cur_wave_info = {}
 	self.cur_wave_info.enemy_index = 1
-	self.cur_wave_info.start_frame = g_running_frame
+	self.cur_wave_info.start_frame = Glo.RunningFrame
 	self.cur_wave_info.enemy_count = #t
 	self.cur_wave_info.enemy_list  = t
 end

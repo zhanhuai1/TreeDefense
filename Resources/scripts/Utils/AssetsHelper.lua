@@ -6,8 +6,19 @@ AssetsHelper = AssetsHelper or {}
 -----------------------------------------------------
 function AssetsHelper.RegisterAllFrames()
 	cc.SpriteFrameCache:getInstance():addSpriteFrames("media/sheet_ui.plist")
+	cc.SpriteFrameCache:getInstance():addSpriteFrames("media/sheet_main_bg.plist")
 end
 
+function AssetsHelper.CreateTextureSprite(tex_name)
+	local sprite = cc.Sprite:create(tex_name)
+	return sprite
+end
+
+--frame必须在上面已经加载过的plist里面
+function AssetsHelper.CreateFrameSprite(frame_name)
+	local sprite = cc.Sprite:createWithSpriteFrameName(frame_name)
+	return sprite
+end
 
 -----------------------------------------------------
 ----------------- GUI   ---------------------------
@@ -56,14 +67,14 @@ function AssetsHelper.CreateTextureSprite(tex_name)
 	return sprite
 end
 
-function AssetsHelper.CreateFrameSprite(frame_name)
-	local frame_info = g_frames_config[frame_name]
-	if frame_info then
-		local sprite = CCSprite:create(frame_info.texture, frame_info.rect)
-		return sprite
-	end
-	return nil
-end
+-- function AssetsHelper.CreateFrameSprite(frame_name)
+-- 	local frame_info = g_frames_config[frame_name]
+-- 	if frame_info then
+-- 		local sprite = CCSprite:create(frame_info.texture, frame_info.rect)
+-- 		return sprite
+-- 	end
+-- 	return nil
+-- end
 
 function AssetsHelper.CreateAnimateAction(anim_name)
 	local anim_frames = g_animations_config[anim_name]

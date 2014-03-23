@@ -25,7 +25,7 @@
 			],
 			[
 				"g_",
-				"g_real_visible_sz"
+				"Glo.VisibleRct"
 			]
 		]
 	},
@@ -144,7 +144,7 @@
 			"TouchEventType",
 			"ccs.TouchEventType",
 			"TOUCH_EVENT_MOVED",
-			"g_real_visible_sz",
+			"Glo.VisibleRct",
 			"CCSize",
 			"TextureLoader",
 			"TextureCache",

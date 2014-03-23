@@ -11,9 +11,7 @@ EventName.Failed		= "EventName.Failed"
 EventName.Retry 		= "EventName.Retry"
 
 EventName.GoMainMenu	= "EventName.GoMainMenu"
-
 EventName.GoSelectMap	= "EventName.GoSelectMap"
-
 EventName.GoGame 		= "EventName.GoGame"
 
 EventName.Pause 		= "EventName.Pause"
