@@ -29,8 +29,8 @@ function SelectMapScreen:Enter()
 	--回退按钮
 	if self.btn_back == nil then
 		local btn = ccui.Button:create()
-		btn:loadTextures("start_btn_nor.png", "start_btn_sel.png", "", ccui.TextureResType.plistType)
-		btn:setPosition(50, 50)
+		btn:loadTextures("back_btn_nor.png", "back_btn_sel.png", "", ccui.TextureResType.plistType)
+		btn:setPosition(75, 75)
 		btn:setPressedActionEnabled(false)
 		btn:setTouchEnabled(true)
 		Glo.LayerUI:addChild(btn)
@@ -44,7 +44,8 @@ function SelectMapScreen:Enter()
 	end
 
 	--关卡按钮
-	local x_start = 150
+	local x_step = 150
+	local x_start = (Glo.VisibleRct.width - x_step * 4) / 2
 	local posx =  x_start
 	local posy = Glo.VisibleRct.height - 150
 	for y = 1, 4 do
@@ -67,7 +68,7 @@ function SelectMapScreen:Enter()
 			map_info.btn = btn
 			Glo.LayerUI:addChild(btn)
 
-			posx = posx + 150
+			posx = posx + x_step
 		end
 		posx = x_start
 		posy = posy - 130
