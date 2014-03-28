@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"x_st",
+				"x_step"
+			],
+			[
+				"Layer",
+				"LayerBg"
+			],
+			[
 				"end",
 				"ended"
 			],
@@ -25,7 +33,7 @@
 			],
 			[
 				"g_",
-				"Glo.VisibleRct"
+				"g_real_visible_sz"
 			]
 		]
 	},
@@ -35,15 +43,49 @@
 			"file": "Screen/MainMenuScreen.lua",
 			"settings":
 			{
-				"buffer_size": 1618,
+				"buffer_size": 2417,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Screen/SelectMapScreen.lua",
+			"settings":
+			{
+				"buffer_size": 2990,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 46 files for \"Glo.VisibleSize\" (case sensitive, whole word)\n\n/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/MainMenuScreen.lua:\n   17  	local sky_frame = cc.SpriteFrameCache:getInstance():getSpriteFrame(\"sky.png\")\n   18  	local frame_sz = sky_frame:getOriginalSize()\n   19: 	local visible_sz = Glo.VisibleSize\n   20: 	local x_scale = Glo.VisibleSize.width / frame_sz.width\n   21: 	local y_scale = Glo.VisibleSize.height / frame_sz.height\n   22  	self.sky:setScale((x_scale > y_scale) and x_scale or y_scale)\n   23: 	self.sky:setPosition(Glo.VisibleSize.width / 2, Glo.VisibleSize.height / 2)\n   24  	print(\"SkyFrameSize:\", sz.width, sz.height)\n   25  \n\n5 matches in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 698,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
 			"file": "main.lua",
 			"settings":
 			{
-				"buffer_size": 4603,
+				"buffer_size": 4367,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Config/Config.lua",
+			"settings":
+			{
+				"buffer_size": 292,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Utils/EventName.lua",
+			"settings":
+			{
+				"buffer_size": 550,
 				"line_ending": "Unix"
 			}
 		}
@@ -59,7 +101,7 @@
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 139.0
 	},
 	"distraction_free":
 	{
@@ -72,11 +114,24 @@
 	},
 	"file_history":
 	[
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/untitled.sublime-workspace",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Config/Config.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/ShineObjManager.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/SelectMapScreen.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/Map.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/main.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/TimerQuest.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/GameScreen.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/BaseScreen.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/ShineObj.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/UI/BaseView.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/UI/GameInfoView.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/AssetsHelper.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/cc/Cocos2d.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/TextureLoader.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/MainMenuScreen.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/GameScreen.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/MainMenuScreen.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/AssetsHelper.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/main.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Config/AllUIFrames.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/MovableObj.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Towers/BaseTower.lua",
@@ -125,9 +180,32 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"Shine",
+			"rect",
+			"Glo.VisibleSize",
+			"Glo.VisibleRct",
+			"Glo.RealVisibleRct",
+			"RealVisibleRct",
+			"GlobalEventSystem",
+			"g_real_visible_sz",
+			"g_running_frame",
+			"g_running_time",
+			"g_game_scene",
+			"g_real_visible_sz",
+			"g_real_visible_rct",
+			"g_real_visible_sz",
+			"g_real_visible_rct",
+			"TextureLoader",
+			"g_running_time",
+			"g_game_scene",
+			"Config",
+			"CreateFrameSprite",
+			"ZOrder.Bg",
+			"ZOrder.Squirm",
+			"ZOrder",
 			"btn1_nor.png",
 			"RegisterAllFrames",
 			"AllUIFrames",
@@ -144,7 +222,7 @@
 			"TouchEventType",
 			"ccs.TouchEventType",
 			"TOUCH_EVENT_MOVED",
-			"Glo.VisibleRct",
+			"g_real_visible_sz",
 			"CCSize",
 			"TextureLoader",
 			"TextureCache",
@@ -174,6 +252,11 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Glo.VisibleRct",
+			"Glo.RealVisibleRct",
+			"Glo.RunningFrame",
+			"Glo.RunningTime",
+			"Glo.Scene",
 			"cc.rect",
 			"cc.size",
 			"cc.p",
@@ -185,13 +268,13 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -199,15 +282,15 @@
 					"file": "Screen/MainMenuScreen.lua",
 					"settings":
 					{
-						"buffer_size": 1618,
+						"buffer_size": 2417,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1194,
-								1194
+								1367,
+								1872
 							]
 						],
 						"settings":
@@ -216,31 +299,170 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 92.0,
+						"translation.y": 275.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "main.lua",
+					"file": "Screen/SelectMapScreen.lua",
 					"settings":
 					{
-						"buffer_size": 4603,
+						"buffer_size": 2990,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								493,
-								493
+								2179,
+								2179
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Lua/Lua.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 454.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 698,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										319,
+										334
+									],
+									[
+										359,
+										374
+									],
+									[
+										422,
+										437
+									],
+									[
+										562,
+										577
+									],
+									[
+										589,
+										604
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								323,
+								323
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "main.lua",
+					"settings":
+					{
+						"buffer_size": 4367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3807,
+								3817
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1658.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Config/Config.lua",
+					"settings":
+					{
+						"buffer_size": 292,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								237,
+								237
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Utils/EventName.lua",
+					"settings":
+					{
+						"buffer_size": 550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								250,
+								250
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -293,8 +515,24 @@
 		"selected_items":
 		[
 			[
+				"event",
+				"Utils/EventName.lua"
+			],
+			[
+				"config",
+				"Config/Config.lua"
+			],
+			[
+				"main.l",
+				"main.lua"
+			],
+			[
 				"assets",
-				"scripts/Utils/AssetsHelper.lua"
+				"Utils/AssetsHelper.lua"
+			],
+			[
+				"basescreen",
+				"Screen/BaseScreen.lua"
 			],
 			[
 				"asser",
@@ -311,10 +549,6 @@
 			[
 				"mainmen",
 				"scripts/Screen/MainMenuScreen.lua"
-			],
-			[
-				"basescreen",
-				"scripts/Screen/BaseScreen.lua"
 			]
 		],
 		"width": 0.0
