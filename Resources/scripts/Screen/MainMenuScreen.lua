@@ -11,46 +11,39 @@ end
 function MainMenuScreen:Enter()
 	print("= = =MainMenuScreen:Enter= = =")
 	BaseScreen.Enter(self)
-
-	self.sky = AssetsHelper.CreateFrameSprite("sky.png")
-	Glo.LayerBg:addChild(self.sky)
-	local sky_frame = cc.SpriteFrameCache:getInstance():getSpriteFrame("sky.png")
-	local frame_sz = sky_frame:getOriginalSize()
-	local x_scale = Glo.VisibleRct.width / frame_sz.width
-	local y_scale = Glo.VisibleRct.height / frame_sz.height
-	local bg_scale = ((x_scale > y_scale) and x_scale or y_scale) + 0.1
-	self.sky:setScale(bg_scale)
-	self.sky:setPosition(Glo.VisibleRct.width / 2, Glo.VisibleRct.height / 2)
-
-	self.ground = AssetsHelper.CreateFrameSprite("ground.png")
-	local ground_frame = cc.SpriteFrameCache:getInstance():getSpriteFrame("ground.png")
-	frame_sz = ground_frame:getOriginalSize()
-	x_scale = Glo.VisibleRct.width / frame_sz.width
-	bg_scale = x_scale + 0.1
-	self.ground:setScale(bg_scale)
-	self.ground:setAnchorPoint(cc.p(0.5, 0))
-	self.ground:setPosition(Glo.VisibleRct.width / 2, 0)
-	Glo.LayerBg:addChild(self.ground)
-
-	self.tree = AssetsHelper.CreateFrameSprite("tree.png")
-	self.tree:setScale(bg_scale)
-	self.tree:setPosition(Glo.VisibleRct.width/2, 200)
-	Glo.LayerBg:addChild(self.tree)
-
 	
-	local btn = ccui.Button:create()
-	btn:loadTextures("start_btn_nor.png", "start_btn_sel.png", "", ccui.TextureResType.plistType)
-	btn:setPosition(Glo.VisibleRct.width/2, 200)
-	btn:setPressedActionEnabled(false)
-	btn:setTouchEnabled(true)
-	Glo.LayerUI:addChild(btn)
 	local btn_start_func = function (target, event_type)
 		if event_type == ccui.TouchEventType.ended then
 			GlobalEventSystem:Fire(EventName.GoSelectMap)
+			-- local path = cc.FileUtils:getInstance():fullPathForFilename("music/click.wav")
+			cc.SimpleAudioEngine:getInstance():playEffect("music/click.wav")
 		end
 	end
+
+	local btn = AssetsHelper.CreateButton("start_btn_nor.png", "start_btn_sel.png", "", btn_start_func)
+	btn:setPosition(Glo.VisibleSize.width/2, 300)
+	Glo.LayerUI:addChild(btn)
 	self.btn_start = btn
-	self.btn_start:addTouchEventListener(btn_start_func)
+
+
+
+
+
+	-- local bar = ccui.LoadingBar:create()
+	-- bar:setPosition(cc.p(Glo.VisibleSize.width/2, 100))
+	-- bar:loadTexture("hp_bar.png", ccui.TextureResType.plistType)
+	-- bar:setPercent(50)
+	-- Glo.LayerUI:addChild(bar)
+
+	-- local sp = AssetsHelper.CreateAnimSprite("red_bullet_stat")
+	-- Glo.LayerUI:addChild(sp)
+	-- sp:setPosition(cc.p(Glo.VisibleSize.width/2, 100))
+
+	-- local bullet = Bullet.New(0, 1, cc.p(Glo.VisibleSize.width/2, 100), Glo.LayerUI)
+	-- bullet:SetDirection(0)
+	-- -- bullet:SetDamage(self.attack_damage)
+	-- -- bullet:SetParentTower(self)
+	-- bullet:SetRes("red_bullet")
 end
 
 function MainMenuScreen:Exit()
@@ -58,26 +51,36 @@ function MainMenuScreen:Exit()
 	BaseScreen.Exit(self)
 	
 	if self.btn_start ~= nil then
-		self.btn_start:removeFromParentAndCleanup(true)
+		self.btn_start:removeFromParent(true)
 		self.btn_start = nil
-	end
-
-	if self.sky then
-		self.sky:removeFromParentAndCleanup(true)
-		self.sky = nil
-	end
-
-	if self.ground then
-		self.ground:removeFromParentAndCleanup(true)
-		self.ground = nil
-	end
-
-	if self.tree then
-		self.tree:removeFromParentAndCleanup(true)
-		self.tree = nil
 	end
 end
 
 function MainMenuScreen:Update(delta_time, running_time)
 
+	-- if self.test_node == nil then
+	-- 	self.test_node = cc.Node:create()
+	-- 	self.test_node:retain()
+	-- 	self.test_node:setPosition(cc.p(Glo.VisibleSize.width/2, 100))
+	-- 	Glo.LayerUI:addChild(self.test_node)
+
+	-- 	self.test_sprite = AssetsHelper.CreateAnimSprite("enemy1_run")
+	-- 	self.test_node:addChild(self.test_sprite)
+	-- elseif self.is_hide == nil and running_time > 3 then
+	-- 	self.test_sprite:stopActionByTag(Config.ActionTag.Anim)
+	-- 	self.test_node:removeFromParent(false)
+	-- 	self.is_hide = true
+	-- elseif self.is_show == nil and running_time > 6 then
+	-- 	Glo.LayerUI:addChild(self.test_node)
+	-- 	local act = AssetsHelper.CreateAnimAction("enemy1_run")
+	-- 	self.test_sprite:runAction(act)
+	-- 	self.is_show = true
+	-- end
+
 end
+
+
+
+
+
+

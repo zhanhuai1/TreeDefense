@@ -194,6 +194,10 @@ function cc.pGetIntersectPoint(pt1,pt2,pt3,pt4)
         return cc.p(0,0)
     end
 end
+
+function cc.pString(pt1)
+    return string.format("(%.2f,%.2f) ", pt1.x, pt1.y)
+end
 --Size
 function cc.size( _width,_height )
     return { width = _width, height = _height }

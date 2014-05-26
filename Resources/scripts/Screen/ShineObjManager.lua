@@ -22,8 +22,8 @@ end
 --ex 屏幕范围外不调整的距离
 function ShineObjManager:AdjustObjPosition(obj, ex)
 	ex = ex or 50
-	local xx = Glo.VisibleRct.width
-	local yy = Glo.VisibleRct.height
+	local xx = Glo.VisibleSize.width
+	local yy = Glo.VisibleSize.height
 	if obj.position.x < -ex then
 		obj.position.x = xx+ex
 	elseif obj.position.x > xx+ex then

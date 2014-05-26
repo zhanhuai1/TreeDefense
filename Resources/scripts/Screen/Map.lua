@@ -47,8 +47,8 @@ function Map:__init(name)
 	self.start_pt = cc.p(self.map_info.start_pt.x, self.map_info.start_pt.y)				--起点格子{x,y}
 	self.end_pt   = cc.p(self.map_info.end_pt.x, self.map_info.end_pt.y)					--终点格子{x,y}
 
-	self.pixel_width = self.width * Config.TileSize.width
-	self.pixel_height = self.height * Config.TileSize.height
+	self.pixel_width = self.width * Config.TileSize
+	self.pixel_height = self.height * Config.TileSize
 
 	--由于引擎里的索引是从0开始，而脚本从1开始，所以把寻路器创建大一格
 	--然后把0行和0列设为障碍区，就能保持索引一致
@@ -57,10 +57,10 @@ function Map:__init(name)
 	self.is_paused = false
 	
 	-- --tile(0,0)的中心点坐标
-	-- self.first_tile_pt = {	x= Config.TileSize.width * 0.5,
-	-- 						y= Config.TileSize.height * 0.5 }
-	-- -- self.first_tile_pt = {	x=	-(Config.TileSize.width * self.width * 0.5) + Config.TileSize.width * 0.5, 		
-	-- -- 						y=	-(Config.TileSize.height * self.height * 0.5) + Config.TileSize.height * 0.5 }
+	-- self.first_tile_pt = {	x= Config.TileSize * 0.5,
+	-- 						y= Config.TileSize * 0.5 }
+	-- -- self.first_tile_pt = {	x=	-(Config.TileSize * self.width * 0.5) + Config.TileSize * 0.5, 		
+	-- -- 						y=	-(Config.TileSize * self.height * 0.5) + Config.TileSize * 0.5 }
 
 	-- print("Map:__init() : fist_tile_pt:", self.first_tile_pt.x, self.first_tile_pt.y)
 
@@ -147,7 +147,7 @@ function Map:__delete()
 
 	--清空所有层
 	for _,layer in pairs(self.layers_node) do
-		layer:removeFromParentAndCleanup(true)
+		layer:removeFromParent(true)
 	end
 	self.layers_node = nil
 end
@@ -233,7 +233,7 @@ function Map:Update(delta_time, running_time)
 	
 	--刷新当前波的怪物
 	if self.cur_wave_info ~= nil then
-		local wave_frame = Glo.RunningFrame - self.cur_wave_info.start_frame - self.preparing_frames
+		local wave_frame = Glo.RunningTime - self.cur_wave_info.start_time - self.preparing_time
 		if wave_frame >= 0 then
 			for i=self.cur_wave_info.enemy_index, self.cur_wave_info.enemy_count do
 
@@ -301,7 +301,7 @@ function Map:EnsureRenderGroup(layer_id)
 	if layer_id ~= Map.LayersConfig.BackgroundLayer then
 		if self.main_node == nil then
 			self.main_node = CCNode:create()
-			Glo.Scene:addChild(self.main_node, Config.ZOrder.Map)
+			-- Glo.Scene:addChild(self.main_node, Config.ZOrder.Map)
 		end
 
 		local node = self.layers_node[layer_id]
@@ -314,7 +314,7 @@ function Map:EnsureRenderGroup(layer_id)
 	else
 		if self.bg_node == nil then
 			self.bg_node = CCNode:create()
-			Glo.Scene:addChild(self.bg_node, Config.ZOrder.Bg)
+			-- Glo.Scene:addChild(self.bg_node, Config.ZOrder.Bg)
 		end
 		
 		local node = self.layers_node[layer_id]
@@ -335,9 +335,9 @@ function Map:SetCameraPos(pos)
 	local x, y, z = 0,0,0
 	x,y,z = main_camera:getEyeXYZ(x, y, z)
 
-	local min_x = Glo.VisibleRct.width/2
+	local min_x = Glo.VisibleSize.width/2
 	local max_x = self.pixel_width - min_x
-	local min_y = Glo.VisibleRct.height/2
+	local min_y = Glo.VisibleSize.height/2
 	local max_y = self.pixel_height - min_y
 	if pos.x < min_x then
 		pos.x = min_x
@@ -377,8 +377,8 @@ function Map:GetCameraPos()
 end
 
 function Map:IsPixelInMap(pixel_pos)
-	local half_w = Glo.VisibleRct.width/2
-	local half_h = Glo.VisibleRct.height/2
+	local half_w = Glo.VisibleSize.width/2
+	local half_h = Glo.VisibleSize.height/2
 	return (pixel_pos.x >= -half_w-50) and 
 		(pixel_pos.x <= half_w+50) and 
 		(pixel_pos.y >= -half_h-50) and
@@ -634,7 +634,7 @@ function Map:UpdateTile(x, y)
 	-- else
 	-- 	--如果该格子没有填充生长基，就清除它并返回
 	-- 	if cur_info.tile_sprite then
-	-- 		cur_info.tile_sprite:removeFromParentAndCleanup(true)
+	-- 		cur_info.tile_sprite:removeFromParent(true)
 	-- 		cur_info.tile_sprite = nil
 	-- 		cur_info.tile_sprite_id = -1
 	-- 	end
@@ -655,7 +655,7 @@ function Map:UpdateTile(x, y)
 	-- if cur_info.tile_sprite_id ~= value then
 	-- 	--把旧的清除	
 	-- 	if cur_info.tile_sprite then
-	-- 		cur_info.tile_sprite:removeFromParentAndCleanup(true)
+	-- 		cur_info.tile_sprite:removeFromParent(true)
 	-- 		cur_info.tile_sprite = nil
 	-- 	end
 
@@ -701,7 +701,7 @@ function Map:IncreaseWave()
 	-- {enemy_index = 1, start_frame = 0, enemy_count = 0, enemy_list = {}}
 	self.cur_wave_info = {}
 	self.cur_wave_info.enemy_index = 1
-	self.cur_wave_info.start_frame = Glo.RunningFrame
+	self.cur_wave_info.start_frame = Glo.RunningTime
 	self.cur_wave_info.enemy_count = #t
 	self.cur_wave_info.enemy_list  = t
 end

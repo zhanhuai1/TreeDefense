@@ -11,7 +11,7 @@ end
 
 function BaseView:__delete()
 	if self.root_wnd then
-		self.root_wnd:removeFromParentAndCleanup(true)
+		self.root_wnd:removeFromParent(true)
 		self.root_wnd:release()
 		self.root_wnd = nil
 	end
@@ -31,7 +31,7 @@ function BaseView:Open()
 	end
 	BaseView.opened_instance = self
 	self.is_open = true
-	Glo.Scene:addChild(self.root_wnd, self.z_order)
+	-- Glo.Scene:addChild(self.root_wnd, self.z_order)
 end
 
 function BaseView:Close()
@@ -44,5 +44,5 @@ function BaseView:Close()
 		-- print("= = = opened_instance :", nil)
 	end
 	self.is_open = false
-	self.root_wnd:removeFromParentAndCleanup(false)
+	self.root_wnd:removeFromParent(false)
 end

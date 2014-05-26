@@ -4,16 +4,288 @@
 		"selected_items":
 		[
 			[
+				"anim_nam",
+				"anim_name"
+			],
+			[
+				"Destroy",
+				"DestroyBullet"
+			],
+			[
+				"MapTil",
+				"MapTilesY"
+			],
+			[
+				"attac",
+				"attack_start_time"
+			],
+			[
+				"bullet_",
+				"bullet_list"
+			],
+			[
+				"bull",
+				"bullet"
+			],
+			[
+				"create",
+				"create"
+			],
+			[
+				"bulle",
+				"bullet_id"
+			],
+			[
+				"delta",
+				"delta"
+			],
+			[
+				"anim_ac",
+				"anim_act1"
+			],
+			[
+				"anim",
+				"animation2"
+			],
+			[
+				"frame_de",
+				"frame_delay2"
+			],
+			[
+				"anim_n",
+				"anim_name"
+			],
+			[
+				"crea",
+				"created_count"
+			],
+			[
+				"cret",
+				"created_count"
+			],
+			[
+				"inst",
+				"instance_id"
+			],
+			[
+				"Build",
+				"BuildObj"
+			],
+			[
+				"Buil",
+				"BuildObj"
+			],
+			[
+				"creat",
+				"create_build_binder"
+			],
+			[
+				"type",
+				"type_id"
+			],
+			[
+				"icon_",
+				"icon_info_list"
+			],
+			[
+				"levl",
+				"level_cfg"
+			],
+			[
+				"build",
+				"build_parent_node"
+			],
+			[
+				"buil",
+				"build_parent_node"
+			],
+			[
+				"bullet",
+				"bullet_list"
+			],
+			[
+				"enemy",
+				"enemy"
+			],
+			[
+				"ene",
+				"enemy_list"
+			],
+			[
+				"delt",
+				"delta_time"
+			],
+			[
+				"tower",
+				"tower_list"
+			],
+			[
+				"lev",
+				"level"
+			],
+			[
+				"leve",
+				"levels"
+			],
+			[
+				"Bu",
+				"BulletTower"
+			],
+			[
+				"Pop",
+				"PopupMenu"
+			],
+			[
+				"icon",
+				"icon_info"
+			],
+			[
+				"icon_in",
+				"icon_info"
+			],
+			[
+				"icon_if",
+				"icon_info_list"
+			],
+			[
+				"Open",
+				"OpenPopupMenu"
+			],
+			[
+				"pop",
+				"PopupIconInfo"
+			],
+			[
+				"level",
+				"level_cfg"
+			],
+			[
+				"Icon",
+				"IconTypes"
+			],
+			[
+				"buid_",
+				"build_type"
+			],
+			[
+				"tile",
+				"tile_pos"
+			],
+			[
+				"build_",
+				"build_list"
+			],
+			[
+				"Bul",
+				"BuildConfig"
+			],
+			[
+				"icon_info",
+				"icon_info_list"
+			],
+			[
+				"move_cam",
+				"move_cam_func"
+			],
+			[
+				"scal",
+				"scale2"
+			],
+			[
+				"MapT",
+				"MapTilesY"
+			],
+			[
+				"radi",
+				"radian"
+			],
+			[
+				"delay",
+				"delay_hide_func"
+			],
+			[
+				"sc",
+				"scale1"
+			],
+			[
+				"fuc",
+				"function	function"
+			],
+			[
+				"btn_speed",
+				"btn_speed_up"
+			],
+			[
+				"root",
+				"root_wnd"
+			],
+			[
+				"func",
+				"function	function"
+			],
+			[
+				"end",
+				"end_eye_pos"
+			],
+			[
+				"Came",
+				"CameraZoomOut"
+			],
+			[
+				"cam_",
+				"cam_x"
+			],
+			[
+				"cam",
+				"cam_param"
+			],
+			[
+				"fun",
+				"function	function"
+			],
+			[
+				"start_",
+				"start_eye_pos"
+			],
+			[
+				"star",
+				"start_eye_pos"
+			],
+			[
+				"sca",
+				"scale"
+			],
+			[
+				"scale_",
+				"scale_camera_tar_z"
+			],
+			[
+				"Action",
+				"ActionTag"
+			],
+			[
+				"Creat",
+				"CreateAnimSprite"
+			],
+			[
+				"frame_del",
+				"frame_delay2"
+			],
+			[
+				"anm",
+				"anim_name"
+			],
+			[
+				"test",
+				"test_sprite"
+			],
+			[
 				"x_st",
 				"x_step"
 			],
 			[
 				"Layer",
 				"LayerBg"
-			],
-			[
-				"end",
-				"ended"
 			],
 			[
 				"_h",
@@ -43,7 +315,98 @@
 			"file": "Screen/MainMenuScreen.lua",
 			"settings":
 			{
-				"buffer_size": 2417,
+				"buffer_size": 1426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "UI/SelectLevelIcon.lua",
+			"settings":
+			{
+				"buffer_size": 1830,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Screen/GameScreen.lua",
+			"settings":
+			{
+				"buffer_size": 4829,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Screen/Scene/Scene.lua",
+			"settings":
+			{
+				"buffer_size": 15346,
+				"line_ending": "Unix",
+				"name": "Scene"
+			}
+		},
+		{
+			"file": "Screen/Scene/RazerTower.lua",
+			"settings":
+			{
+				"buffer_size": 120,
+				"line_ending": "Unix",
+				"name": "RazerTower"
+			}
+		},
+		{
+			"file": "UI/CountDownView.lua",
+			"settings":
+			{
+				"buffer_size": 1555,
+				"line_ending": "Unix",
+				"name": "CountDownView"
+			}
+		},
+		{
+			"file": "UI/GameInfoView.lua",
+			"settings":
+			{
+				"buffer_size": 7258,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Utils/AssetsHelper.lua",
+			"settings":
+			{
+				"buffer_size": 4720,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.lua",
+			"settings":
+			{
+				"buffer_size": 5104,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "UI/PopupMenu.lua",
+			"settings":
+			{
+				"buffer_size": 4959,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/zhanhuaijin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 51,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Config/MapsConfig/Map_01_01.lua",
+			"settings":
+			{
+				"buffer_size": 1321,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,25 +414,15 @@
 			"file": "Screen/SelectMapScreen.lua",
 			"settings":
 			{
-				"buffer_size": 2990,
+				"buffer_size": 2129,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 46 files for \"Glo.VisibleSize\" (case sensitive, whole word)\n\n/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/MainMenuScreen.lua:\n   17  	local sky_frame = cc.SpriteFrameCache:getInstance():getSpriteFrame(\"sky.png\")\n   18  	local frame_sz = sky_frame:getOriginalSize()\n   19: 	local visible_sz = Glo.VisibleSize\n   20: 	local x_scale = Glo.VisibleSize.width / frame_sz.width\n   21: 	local y_scale = Glo.VisibleSize.height / frame_sz.height\n   22  	self.sky:setScale((x_scale > y_scale) and x_scale or y_scale)\n   23: 	self.sky:setPosition(Glo.VisibleSize.width / 2, Glo.VisibleSize.height / 2)\n   24  	print(\"SkyFrameSize:\", sz.width, sz.height)\n   25  \n\n5 matches in 1 file\n",
+			"file": "Screen/Scene/TileObj.lua",
 			"settings":
 			{
-				"buffer_size": 698,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "main.lua",
-			"settings":
-			{
-				"buffer_size": 4367,
+				"buffer_size": 904,
 				"line_ending": "Unix"
 			}
 		},
@@ -77,7 +430,58 @@
 			"file": "Config/Config.lua",
 			"settings":
 			{
-				"buffer_size": 292,
+				"buffer_size": 809,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Screen/Map.lua",
+			"settings":
+			{
+				"buffer_size": 17003,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Towers/BaseTower.lua",
+			"settings":
+			{
+				"buffer_size": 6436,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Towers/TowerTypesConfig.lua",
+			"settings":
+			{
+				"buffer_size": 325,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Screen/Scene/BulletTower.lua",
+			"settings":
+			{
+				"buffer_size": 3694,
+				"line_ending": "Unix",
+				"name": "BulletTower"
+			}
+		},
+		{
+			"contents": "Searching 52 files for \"stopActionByTag\" (whole word)\n\n/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/Scene/Bullet.lua:\n   25  		end\n   26  	else\n   27: 		self.main_sprite:stopActionByTag(Config.ActionTag.Anim)\n   28  		self.main_sprite:runAction(action)\n   29  	end\n   ..\n   55  	local action = AssetsHelper.CreateAnimAction(res..\"bom\", nil, nil, nil, 1) \n   56  	if action ~= nil then\n   57: 		self.main_sprite:stopActionByTag(Config.ActionTag.Anim)\n   58  		self.main_sprite:runAction(action)\n   59  	end\n\n/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/Scene/BulletTower.lua:\n   31  	local action = AssetsHelper.CreateAnimAction(res..\"_\"..anim, nil, res..\"_stat\", nil, 1)\n   32  	if action then\n   33: 		self.main_sprite:stopActionByTag\n   34  end\n   35  \n\n3 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 815,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "Config/BuildConfig.lua",
+			"settings":
+			{
+				"buffer_size": 1355,
 				"line_ending": "Unix"
 			}
 		},
@@ -85,7 +489,50 @@
 			"file": "Utils/EventName.lua",
 			"settings":
 			{
-				"buffer_size": 550,
+				"buffer_size": 1055,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Screen/Scene/Bullet.lua",
+			"settings":
+			{
+				"buffer_size": 1890,
+				"line_ending": "Unix",
+				"name": "Bullet"
+			}
+		},
+		{
+			"file": "Config/BulletConfig.lua",
+			"settings":
+			{
+				"buffer_size": 125,
+				"line_ending": "Unix",
+				"name": "BulletConfig"
+			}
+		},
+		{
+			"file": "Screen/Scene/MovableObj.lua",
+			"settings":
+			{
+				"buffer_size": 1123,
+				"line_ending": "Unix",
+				"name": "MovableObj"
+			}
+		},
+		{
+			"file": "Screen/MovableObj.lua",
+			"settings":
+			{
+				"buffer_size": 906,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Screen/Scene/BuildObj.lua",
+			"settings":
+			{
+				"buffer_size": 1784,
 				"line_ending": "Unix"
 			}
 		}
@@ -114,27 +561,42 @@
 	},
 	"file_history":
 	[
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/untitled.sublime-workspace",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/Scene/BuildObj.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Bullets/BaseBullet.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/cc/Cocos2d.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/UI/PopupIconInfo.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Config/BuildConfig.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/Utils.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/BuildObj.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Config/Config.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/ShineObjManager.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/SelectMapScreen.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/Scene/TileObj.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/untitled.sublime-workspace",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/Map.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/main.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/SelectMapScreen.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/ShineObjManager.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/TimerQuest.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/main.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/AssetsHelper.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/UI/BaseView.lua",
+		"/Users/zhanhuaijin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/zhanhuaijin/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Config/MapsConfig/Map_01_01.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/ShineObj.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/EventName.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/ScreenManager.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/UI/GameInfoView.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/TileObj.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/MovableObj.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Towers/BaseTower.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/UI/PopupMenu.lua",
+		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/UI/SelectMapIcon.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/GameScreen.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/BaseScreen.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/ShineObj.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/UI/BaseView.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/UI/GameInfoView.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/AssetsHelper.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/cc/Cocos2d.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Utils/TextureLoader.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/MainMenuScreen.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/GameScreen.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/MainMenuScreen.lua",
 		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Config/AllUIFrames.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Screen/MovableObj.lua",
-		"/Users/zhanhuaijin/trunk/TreeDefense/Resources/scripts/Towers/BaseTower.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/cocos2d/cocos/scripting/lua/script/GuiConstants.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/cocos2d/cocos/scripting/lua/script/DeprecatedEnum.lua",
 		"/Users/zhanhuaijin/trunk/CellDefense/Resources/scripts/Screen/SelectMapScreen.lua",
@@ -172,7 +634,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 			""
@@ -183,6 +645,124 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"base_node",
+			"bullet_type",
+			"Animate",
+			"self.speed",
+			"self.res",
+			"attack_start_time",
+			"stopActionByTag",
+			"last_attack_time",
+			"self.build_parent_node",
+			"self.tower_id",
+			"getAction",
+			"bit.bor",
+			"build_parent_node",
+			"move_dir_radian",
+			"RazerTower",
+			"GetBuildType",
+			"build_type_id",
+			"self.tower_list",
+			"rotate_speed",
+			"attack_start_time",
+			"OnIconClick",
+			"Close",
+			"CreateBuild",
+			"InitListeners",
+			"CreateBuild",
+			"OnIconClick",
+			"self.bullet_list",
+			"BuildConfig.Types",
+			"GetMaxLevel",
+			"GetLevel",
+			"GetType",
+			"BuildConfig.Types",
+			"tile_batch_node",
+			"self.build_list",
+			"self.icon_list",
+			"OpenPopupMenu",
+			"RedBlock",
+			"PopupIconInfo",
+			"BuildType.Tile",
+			"MovableObj",
+			"g_animations_config",
+			"g_fonts_config",
+			"g_tower_types",
+			"BuildType",
+			"TileType",
+			"SetCameraPos",
+			"move_cam_handler",
+			"unscheduleScriptFunc",
+			"Update",
+			"Glo.VisibleRct",
+			"VisibleRct",
+			"icon_radius",
+			"ttt",
+			"map",
+			"is_open",
+			"InitEvents",
+			"game_info_view",
+			"root_wnd",
+			"getSpriteFrame",
+			"GetFrame",
+			"GetSprite",
+			"CreateUIScaleSprite",
+			"CreateAnimSprite",
+			"CreateUIScaleSprite",
+			"game_info_view",
+			"InitEvents",
+			"btn_back",
+			"self.cam_stage",
+			"is_scaling_camera",
+			"count_down_view",
+			"font_face",
+			"root_wnd",
+			"cam_param",
+			"cam_stage",
+			"CamStage",
+			"cam_stage",
+			"cam_param",
+			"cam_stage",
+			"ZoomIn",
+			"TileObj",
+			"getTextureCache",
+			"removeFromParent",
+			"Glo.RunningFrame",
+			"kDefaultFPS",
+			"Glo.RunningFrame",
+			"Vertex3F",
+			"cc.Director",
+			"self.map",
+			"is_scaling_camera",
+			"TimerQuest",
+			"self.camera",
+			"Config.ActionTag.Camera",
+			"RepeatForever",
+			"SetCameraPos",
+			"Glo.LayerMap",
+			"self.main_node",
+			"OnSceneClicked",
+			"ccpDistance",
+			"self.map",
+			"self.map_width",
+			"map_width",
+			"self.map_width",
+			"self.map",
+			"require",
+			"EventName.Retry",
+			"EventName.EnemyArrived",
+			"EventName.GoldChanged",
+			"Glo.Scene",
+			"self.cur_map_info",
+			"EventName.GoGame",
+			"SelectMapIcon",
+			"removeFromParentAndCleanup",
+			"self.sky",
+			"CreateFrameSprite",
+			"animation",
+			"main_anim_action",
+			"CreateFrameSprite",
+			"CreateTextureSprite",
 			"Shine",
 			"rect",
 			"Glo.VisibleSize",
@@ -192,59 +772,7 @@
 			"GlobalEventSystem",
 			"g_real_visible_sz",
 			"g_running_frame",
-			"g_running_time",
-			"g_game_scene",
-			"g_real_visible_sz",
-			"g_real_visible_rct",
-			"g_real_visible_sz",
-			"g_real_visible_rct",
-			"TextureLoader",
-			"g_running_time",
-			"g_game_scene",
-			"Config",
-			"CreateFrameSprite",
-			"ZOrder.Bg",
-			"ZOrder.Squirm",
-			"ZOrder",
-			"btn1_nor.png",
-			"RegisterAllFrames",
-			"AllUIFrames",
-			"btn_1_normal",
-			"g_frames_config",
-			"CCRect",
-			"Opengl",
-			"ccs",
-			"TextureResType",
-			"GuiConstants",
-			"UI_TEX_TYPE_PLIST",
-			"CCSize",
-			"cc.Director:getInstance():getTextureCache",
-			"TouchEventType",
-			"ccs.TouchEventType",
-			"TOUCH_EVENT_MOVED",
-			"g_real_visible_sz",
-			"CCSize",
-			"TextureLoader",
-			"TextureCache",
-			"TextureCacheDeprecated.destroyInstance",
-			"kResolutionShowAll",
-			"SHOW_ALL",
-			"ccp",
-			"cc.pMult",
-			"ccpAdd",
-			"ccpMult",
-			"setContentSize",
-			"CCPoint",
-			"setContentSize",
-			"self.squirm_bg",
-			"self.squirm_bg\n\n",
-			"CCDirector:sharedDirector",
-			"require(\"",
-			"require",
-			"__G__TRACKBACK__",
-			"menuCallbackOpenPopup",
-			"addChild",
-			"myadd"
+			"g_running_time"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -252,6 +780,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Glo.VisibleSize",
+			"SelectLevelIcon",
+			"removeFromParent",
 			"Glo.VisibleRct",
 			"Glo.RealVisibleRct",
 			"Glo.RunningFrame",
@@ -268,13 +799,13 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 22,
 			"sheets":
 			[
 				{
@@ -282,15 +813,15 @@
 					"file": "Screen/MainMenuScreen.lua",
 					"settings":
 					{
-						"buffer_size": 2417,
+						"buffer_size": 1426,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1367,
-								1872
+								1126,
+								1126
 							]
 						],
 						"settings":
@@ -299,25 +830,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 275.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "Screen/SelectMapScreen.lua",
+					"file": "UI/SelectLevelIcon.lua",
 					"settings":
 					{
-						"buffer_size": 2990,
+						"buffer_size": 1830,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2179,
-								2179
+								433,
+								433
 							]
 						],
 						"settings":
@@ -326,16 +857,476 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 454.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "Screen/GameScreen.lua",
 					"settings":
 					{
-						"buffer_size": 698,
+						"buffer_size": 4829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3107,
+								3107
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1779.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Screen/Scene/Scene.lua",
+					"settings":
+					{
+						"buffer_size": 15346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14889,
+								14889
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Scene",
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7126.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Screen/Scene/RazerTower.lua",
+					"settings":
+					{
+						"buffer_size": 120,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								67
+							]
+						],
+						"settings":
+						{
+							"auto_name": "RazerTower",
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "UI/CountDownView.lua",
+					"settings":
+					{
+						"buffer_size": 1555,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								634,
+								648
+							]
+						],
+						"settings":
+						{
+							"auto_name": "CountDownView",
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 38.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "UI/GameInfoView.lua",
+					"settings":
+					{
+						"buffer_size": 7258,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3199,
+								3199
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2544.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Utils/AssetsHelper.lua",
+					"settings":
+					{
+						"buffer_size": 4720,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3353,
+								3353
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 978.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "main.lua",
+					"settings":
+					{
+						"buffer_size": 5104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1008,
+								1008
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "UI/PopupMenu.lua",
+					"settings":
+					{
+						"buffer_size": 4959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								705,
+								705
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Users/zhanhuaijin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+					"settings":
+					{
+						"buffer_size": 51,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "Config/MapsConfig/Map_01_01.lua",
+					"settings":
+					{
+						"buffer_size": 1321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								770,
+								770
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "Screen/SelectMapScreen.lua",
+					"settings":
+					{
+						"buffer_size": 2129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								847,
+								847
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "Screen/Scene/TileObj.lua",
+					"settings":
+					{
+						"buffer_size": 904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								447,
+								457
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "Config/Config.lua",
+					"settings":
+					{
+						"buffer_size": 809,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								468,
+								468
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "Screen/Map.lua",
+					"settings":
+					{
+						"buffer_size": 17003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11106,
+								11106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "Towers/BaseTower.lua",
+					"settings":
+					{
+						"buffer_size": 6436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3542,
+								3554
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1151.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "Towers/TowerTypesConfig.lua",
+					"settings":
+					{
+						"buffer_size": 325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								13
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "Screen/Scene/BulletTower.lua",
+					"settings":
+					{
+						"buffer_size": 3694,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1804,
+								1817
+							]
+						],
+						"settings":
+						{
+							"auto_name": "BulletTower",
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 156.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"settings":
+					{
+						"buffer_size": 815,
 						"regions":
 						{
 							"match":
@@ -344,24 +1335,16 @@
 								"regions":
 								[
 									[
-										319,
-										334
+										187,
+										202
 									],
 									[
-										359,
-										374
+										428,
+										443
 									],
 									[
-										422,
-										437
-									],
-									[
-										562,
-										577
-									],
-									[
-										589,
-										604
+										754,
+										769
 									]
 								],
 								"scope": ""
@@ -370,8 +1353,8 @@
 						"selection":
 						[
 							[
-								323,
-								323
+								766,
+								766
 							]
 						],
 						"settings":
@@ -391,19 +1374,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "main.lua",
+					"buffer": 20,
+					"file": "Config/BuildConfig.lua",
 					"settings":
 					{
-						"buffer_size": 4367,
+						"buffer_size": 1355,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3807,
-								3817
+								730,
+								730
 							]
 						],
 						"settings":
@@ -412,25 +1395,132 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1658.0,
+						"translation.y": 23.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "Config/Config.lua",
+					"buffer": 21,
+					"file": "Utils/EventName.lua",
 					"settings":
 					{
-						"buffer_size": 292,
+						"buffer_size": 1055,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								237,
-								237
+								753,
+								769
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "Screen/Scene/Bullet.lua",
+					"settings":
+					{
+						"buffer_size": 1890,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1718,
+								1718
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Bullet",
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 308.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "Config/BulletConfig.lua",
+					"settings":
+					{
+						"buffer_size": 125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								125,
+								125
+							]
+						],
+						"settings":
+						{
+							"auto_name": "BulletConfig",
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "Screen/Scene/MovableObj.lua",
+					"settings":
+					{
+						"buffer_size": 1123,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								664,
+								684
+							]
+						],
+						"settings":
+						{
+							"auto_name": "MovableObj",
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "Screen/MovableObj.lua",
+					"settings":
+					{
+						"buffer_size": 906,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								799,
+								810
 							]
 						],
 						"settings":
@@ -445,24 +1535,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "Utils/EventName.lua",
+					"buffer": 26,
+					"file": "Screen/Scene/BuildObj.lua",
 					"settings":
 					{
-						"buffer_size": 550,
+						"buffer_size": 1784,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								250,
-								250
+								432,
+								432
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Lua/Lua.tmLanguage"
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -515,20 +1606,248 @@
 		"selected_items":
 		[
 			[
-				"event",
-				"Utils/EventName.lua"
+				"asset",
+				"Utils/AssetsHelper.lua"
+			],
+			[
+				"scene",
+				"Screen/Scene/Scene.lua"
+			],
+			[
+				"countdownvi",
+				"UI/CountDownView.lua"
+			],
+			[
+				"bullettower",
+				"Screen/Scene/BulletTower.lua"
+			],
+			[
+				"bullet",
+				"Screen/Scene/Bullet.lua"
+			],
+			[
+				"bulletconf",
+				"Config/BulletConfig.lua"
+			],
+			[
+				"main.lu",
+				"main.lua"
 			],
 			[
 				"config",
 				"Config/Config.lua"
 			],
 			[
+				"mova",
+				"Screen/Scene/MovableObj.lua"
+			],
+			[
+				"cof",
+				"Config/Config.lua"
+			],
+			[
+				"buildcon",
+				"Config/BuildConfig.lua"
+			],
+			[
+				"movabl",
+				"Screen/Scene/MovableObj.lua"
+			],
+			[
+				"ass",
+				"Utils/AssetsHelper.lua"
+			],
+			[
+				"bulletto",
+				"Screen/Scene/BulletTower.lua"
+			],
+			[
+				"buildobj",
+				"Screen/Scene/BuildObj.lua"
+			],
+			[
+				"basebullet",
+				"Bullets/BaseBullet.lua"
+			],
+			[
+				"movab",
+				"Screen/Scene/MovableObj.lua"
+			],
+			[
+				"tower",
+				"Screen/Scene/BulletTower.lua"
+			],
+			[
+				"confi",
+				"Config/Config.lua"
+			],
+			[
+				"pop",
+				"UI/PopupMenu.lua"
+			],
+			[
+				"cocos",
+				"cc/Cocos2d.lua"
+			],
+			[
+				"asse",
+				"Utils/AssetsHelper.lua"
+			],
+			[
+				"bulett",
+				"Screen/Scene/BulletTower.lua"
+			],
+			[
+				"coco",
+				"cc/Cocos2d.lua"
+			],
+			[
+				"buildconfig",
+				"Config/BuildConfig.lua"
+			],
+			[
+				"mainmenu",
+				"Screen/MainMenuScreen.lua"
+			],
+			[
+				"bullett",
+				"Screen/Scene/BulletTower.lua"
+			],
+			[
 				"main.l",
 				"main.lua"
 			],
 			[
+				"eventnam",
+				"Utils/EventName.lua"
+			],
+			[
+				"popupm",
+				"UI/PopupMenu.lua"
+			],
+			[
+				"popi",
+				"UI/PopupIconInfo.lua"
+			],
+			[
+				"buildconfi",
+				"Config/BuildConfig.lua"
+			],
+			[
+				"bullettowe",
+				"Screen/Scene/BulletTower.lua"
+			],
+			[
+				"util",
+				"Utils/Utils.lua"
+			],
+			[
+				"popupmen",
+				"UI/PopupMenu.lua"
+			],
+			[
+				"tileobj",
+				"Screen/Scene/TileObj.lua"
+			],
+			[
+				"build",
+				"Screen/Scene/BuildObj.lua"
+			],
+			[
+				"popup",
+				"UI/PopupMenu.lua"
+			],
+			[
+				"buildco",
+				"Config/BuildConfig.lua"
+			],
+			[
+				"main",
+				"main.lua"
+			],
+			[
+				"popuo",
+				"UI/PopupIconInfo.lua"
+			],
+			[
+				"popicon",
+				"UI/PopupIconInfo.lua"
+			],
+			[
+				"buid",
+				"Config/BuildConfig.lua"
+			],
+			[
+				"",
+				"Screen/Scene/BuildObj.lua"
+			],
+			[
+				"basetower",
+				"Towers/BaseTower.lua"
+			],
+			[
+				"select",
+				"Screen/SelectMapScreen.lua"
+			],
+			[
+				"gameinfov",
+				"UI/GameInfoView.lua"
+			],
+			[
+				"count",
+				"UI/CountDownView.lua"
+			],
+			[
+				"cc",
+				"cc/Cocos2d.lua"
+			],
+			[
+				"countdown",
+				"UI/CountDownView.lua"
+			],
+			[
+				"cofig",
+				"Config/Config.lua"
+			],
+			[
 				"assets",
 				"Utils/AssetsHelper.lua"
+			],
+			[
+				"assetshel",
+				"Utils/AssetsHelper.lua"
+			],
+			[
+				"config.",
+				"Config/Config.lua"
+			],
+			[
+				"gamescreen",
+				"Screen/GameScreen.lua"
+			],
+			[
+				"gamesc",
+				"Screen/GameScreen.lua"
+			],
+			[
+				"games",
+				"Screen/GameScreen.lua"
+			],
+			[
+				"map",
+				"Screen/Map.lua"
+			],
+			[
+				"eventna",
+				"Utils/EventName.lua"
+			],
+			[
+				"screenmana",
+				"Screen/ScreenManager.lua"
+			],
+			[
+				"event",
+				"Utils/EventName.lua"
 			],
 			[
 				"basescreen",
@@ -537,10 +1856,6 @@
 			[
 				"asser",
 				"scripts/Utils/AssetsHelper.lua"
-			],
-			[
-				"mainmenu",
-				"scripts/Screen/MainMenuScreen.lua"
 			],
 			[
 				"shineobjmanager",

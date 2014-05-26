@@ -9,46 +9,37 @@ function GameScreen:__delete()
 	self:Exit()
 end
 
-function GameScreen:Enter(map_info)
+function GameScreen:Enter(chapter, level)
 	BaseScreen.Enter(self)
-
-	if map_info == nil then
-		GlobalEventSystem:Fire(EventName.GoMainMenu)
-		return
-	end
+	local map_info = g_maps_config[chapter][level]
 
 	self.cur_map_info = map_info
 
 	local scene_touched_func = function (event_type, x, y)	
 		-- print("GameScreen:SceneTouched!!!!!!!!!!!!!!", event_type, x, y)	
-		if event_type == CCTOUCHBEGAN then
+		if event_type == "began" then
 			self:OnSceneTouchBegan(x, y)
 			return true
-		elseif event_type == CCTOUCHMOVED then
+		elseif event_type == "moved" then
 			self:OnSceneTouchMoved(x, y)
-		elseif event_type == CCTOUCHENDED then
+		elseif event_type == "ended" then
 			self:OnSceneTouchEnded(x, y)
 		end
 	end
-	self.touch_layer = CCLayer:create()
+	self.touch_layer = cc.Layer:create()
 	self.touch_layer:registerScriptTouchHandler(scene_touched_func, false, 5, true)
 	self.touch_layer:setAnchorPoint(cc.p(0.5, 0.5))
 	self.touch_layer:setTouchEnabled(true)
 
-	Glo.Scene:addChild(self.touch_layer, Config.ZOrder.Touch)
-
-	self.game_info_view = GameInfoView.New()
+	Glo.LayerTouch:addChild(self.touch_layer)
 
 	if self.map then
 		self.map:DeleteMe()
 		self.map = nil
 	end
-	self.map = Map.New(map_info.map_name)
-	self.map:Init()
+	self.map = Scene.New(map_info)
 
 	self:InitEvents()
-
-
 end
 
 function GameScreen:Exit()
@@ -69,13 +60,8 @@ function GameScreen:Exit()
 		self.failed_view = nil
 	end
 
-	if self.game_info_view then
-		self.game_info_view:DeleteMe()
-		self.game_info_view = nil
-	end
-
 	if self.touch_layer then
-		self.touch_layer:removeFromParentAndCleanup(true)
+		self.touch_layer:removeFromParent(true)
 		self.touch_layer = nil
 	end
 
@@ -151,82 +137,8 @@ end
 function GameScreen:OnSceneClicked(x, y)
 	local camera_pos = self.map:GetCameraPos()
 	local tile = Utils.PixelToTile(cc.pAdd(cc.p(x,y), camera_pos))
-	-- print("!!!!!!!!", string.format("PixelPos:%.2f, %.2f    tilePos:%.2f, %.2f", x, y, tile.x, tile.y))
-	local t = {}
-
-	local cur_tile_state = self.map:GetTileState(tile.x, tile.y)
-	if cur_tile_state == Map.TileState.EMPTY then
-		--填充生长基
-		local icon_info = {}
-		icon_info.frame_name = "icon_build_base"
-		icon_info.press_func = function()
-			self.map:FillTile(tile.x, tile.y, Map.TileState.BUILD_TILE)
-		end
-		table.insert(t, icon_info)
-
-		--填充废弃基
-		icon_info = {}
-		icon_info.frame_name = "icon_rubbish_base"
-		icon_info.press_func = function()
-			self.map:FillTile(tile.x, tile.y, Map.TileState.INVALID_TILE)
-		end
-		table.insert(t, icon_info)
-	elseif cur_tile_state == Map.TileState.BUILD_TILE then
-		--建塔1
-		local icon_info = {}
-		icon_info.frame_name = "icon_tower_1_1"
-		icon_info.press_func = function ()
-			self.map:CreateTower(tile.x, tile.y, "Base")
-		end
-		table.insert(t, icon_info)
-
-		--建塔2
-		local icon_info = {}
-		icon_info.frame_name = "icon_tower_2_1"
-		icon_info.press_func = function ()
-			-- self.map:CreateTower(tile.x, tile.y, "Base")
-		end
-		table.insert(t, icon_info)
-
-		--建塔3
-		local icon_info = {}
-		icon_info.frame_name = "icon_tower_3_1"
-		icon_info.press_func = function ()
-			-- self.map:CreateTower(tile.x, tile.y, "Base")
-		end
-		table.insert(t, icon_info)
-
-		--拆除按钮
-		local icon_info = {}
-		icon_info.frame_name = "icon_destroy"
-		icon_info.press_func = function ()
-			self.map:FillTile(tile.x, tile.y, Map.TileState.EMPTY)
-		end
-		table.insert(t, icon_info)
-	elseif cur_tile_state == Map.TileState.INVALID_TILE then
-		self:HidePopupMenu()
-		return
-	elseif cur_tile_state == Map.TileState.TOWER_BUILT then
-		--升级按钮
-		local icon_info = {}
-		icon_info.frame_name = "icon_tower_upgrade"
-		icon_info.press_func = function ()
-			-- self.map:FillTile(tile.x, tile.y, Map.TileState.EMPTY)
-		end
-		table.insert(t, icon_info)
-
-		--拆除按钮
-		local icon_info = {}
-		icon_info.frame_name = "icon_destroy"
-		icon_info.press_func = function ()
-			self.map:RemoveTower(tile.x, tile.y)
-		end
-		table.insert(t, icon_info)
-	end
-
-	
-	self:ShowPopupMenu(tile, t)
-
+	self.map:OnClick(tile)
+	-- print("GameScreen:OnSceneClicked", string.format("PixelPos:%.2f, %.2f    tilePos:%.2f, %.2f", x, y, tile.x, tile.y))
 	return true
 end
 
@@ -240,7 +152,7 @@ end
 
 function GameScreen:OnSceneTouchMoved(x, y)
 	if not self.is_touch_moving then
-		if ccpDistance(cc.p(x, y), self.touch_began_pos) > 30 then
+		if cc.pGetDistance(cc.p(x, y), self.touch_began_pos) > 30 then
 			self.is_touch_moving = true
 		end
 	end

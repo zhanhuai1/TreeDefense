@@ -2,116 +2,68 @@ GameInfoView = GameInfoView or BaseClass()
 
 
 function GameInfoView:__init( )
-	self.root_wnd = AssetsHelper.CreateUIScaleSprite("img_ui_bg")
-	self.root_wnd:setContentSize(cc.size(g_real_visible_rct.size.width, 64))
-	self.root_wnd:retain()
-	self.root_wnd:setPosition(0, g_real_visible_rct:getMinY()+32)
+	self.root_node = cc.Node:create()
+	self.root_node:setPosition(cc.p(0, 0))
+	Glo.LayerUI:addChild(self.root_node)
 
+	local frame = AssetsHelper.GetFrame("state_panel_bg.png")
+	self.bg_height = frame:getRect().height
+	self.bg = AssetsHelper.CreateScale9Sprite("state_panel_bg.png")
+	self.bg:setContentSize(cc.size(Glo.VisibleSize.width, self.bg_height))
+	self.bg:setAnchorPoint(cc.p(0, 0))
+	self.bg:setPosition(cc.p(0, 0))
+	self.root_node:addChild(self.bg)
 
-	local right = g_real_visible_rct.size.width
-	local pause_btn_x 	= right - 336
-	local speedup_btn_x = pause_btn_x + 64
+	local x = 96
+	local y = 36
+	local x_step = 74
+	--后退
+	local btn = AssetsHelper.CreateButton("back_btn_nor.png", "back_btn_sel.png", "")
+	btn:setPosition(x, y)
+	btn:setTouchEnabled(false)
+	self.root_node:addChild(btn)
+	self.btn_back = btn
+	
+	x = x + x_step
 	--暂停
-	if self.btn_pause == nil then		
-		self.btn_pause = AssetsHelper.CreateButton("btn_pause")
-		self.btn_pause:setPosition(cc.p(pause_btn_x, 32))
-		self.btn_pause:retain()
-		self.root_wnd:addChild(self.btn_pause)
-		self.show_pause_btn = true
-
-		local func = function (event_type, x, y)
-			GlobalEventSystem:Fire(EventName.Pause)
-		end
-		self.btn_pause:addScriptCallBackForControlEvent(func, CCControlEventTouchUpInside)
-	end
+	local btn = AssetsHelper.CreateButton("pause_btn_nor.png", "pause_btn_sel.png", "")
+	btn:setPosition(x, y)
+	self.root_node:addChild(btn)
+	self.btn_pause = btn
 
 	--继续
-	if self.btn_resume == nil then
-		self.btn_resume = AssetsHelper.CreateButton("btn_goon")
-		self.btn_resume:setPosition(cc.p(pause_btn_x, 32))
-		self.btn_resume:retain()
+	local btn = AssetsHelper.CreateButton("goon_btn_nor.png", "goon_btn_sel.png", "")
+	btn:setPosition(x, y)
+	btn:setTouchEnabled(false)
+	self.root_node:addChild(btn)
+	self.btn_go_on = btn
+	self.btn_go_on:setEnabled(false)
 
-		local func = function (event_type, x, y)
-			GlobalEventSystem:Fire(EventName.Resume)
-		end
-		self.btn_resume:addScriptCallBackForControlEvent(func, CCControlEventTouchUpInside)
-	end
-
+	x = x + x_step
 	--加速
-	if self.btn_speedup == nil then
-		self.btn_speedup = AssetsHelper.CreateButton("btn_speedup")
-		self.btn_speedup:setPosition(cc.p(speedup_btn_x, 32))
-		self.btn_speedup:retain()
-		self.root_wnd:addChild(self.btn_speedup)
-		self.show_speedup_btn = true
-
-		local func = function (event_type, x, y)
-			GlobalEventSystem:Fire(EventName.Speedup)
-		end
-		self.btn_speedup:addScriptCallBackForControlEvent(func, CCControlEventTouchUpInside)
-	end
+	local btn = AssetsHelper.CreateButton("speedup_btn_nor.png", "speedup_btn_sel.png", "")
+	btn:setPosition(x, y)
+	btn:setTouchEnabled(false)
+	self.root_node:addChild(btn)
+	self.btn_speed_up = btn
 
 	--减速
-	if self.btn_speeddown == nil then
-		self.btn_speeddown = AssetsHelper.CreateButton("btn_speedup_pressed")
-		self.btn_speeddown:setPosition(cc.p(speedup_btn_x, 32))
-		self.btn_speeddown:retain()
-
-		local func = function (event_type, x, y)
-			GlobalEventSystem:Fire(EventName.Speeddown)
-		end
-		self.btn_speeddown:addScriptCallBackForControlEvent(func, CCControlEventTouchUpInside)
-	end
-
-	--血量
-	local heart_img = AssetsHelper.CreateFrameSprite("img_heart")
-	heart_img:setPosition(cc.p(right-213, 32))
-	self.root_wnd:addChild(heart_img)
-
-	self.wave_label = AssetsHelper.CreateLabelTTF("Common14")
-	self.wave_label:setString("0 / 10")
-	self.wave_label:setColor(ccc3(255, 133, 101))
-	self.wave_label:setPosition(cc.p(right-188, 32))
-	self.root_wnd:addChild(self.wave_label)
-
-	--金币
-	local gold_img = AssetsHelper.CreateFrameSprite("img_coin")
-	gold_img:setPosition(cc.p(right-130, 32))
-	self.root_wnd:addChild(gold_img)
-
-	self.gold_label = AssetsHelper.CreateLabelTTF("Common14")
-	self.gold_label:setString("0")
-	self.gold_label:setColor(ccc3(252, 251, 0))
-	self.gold_label:setPosition(cc.p(right-106, 32))
-	self.root_wnd:addChild(self.gold_label)
+	local btn = AssetsHelper.CreateButton("speedup_btn_sel.png", "speedup_btn_nor.png", "")
+	btn:setPosition(x, y)
+	btn:setTouchEnabled(false)
+	self.root_node:addChild(btn)
+	self.btn_speed_down = btn
+	self.btn_speed_down:setEnabled(false)
 
 
+	-- self:InitEvents()
 
-	Glo.Scene:addChild(self.root_wnd, Config.ZOrder.UI)
-
-	self:InitEvents()
+	self:PlayOpenAnim()
 end
 
 function GameInfoView:__delete( )
-	if self.btn_pause then
-		self.btn_pause:release()
-		self.btn_pause = nil
-	end
-	if self.btn_resume then
-		self.btn_resume:release()
-		self.btn_resume = nil
-	end
-	if self.btn_speedup then
-		self.btn_speedup:release()
-		self.btn_speedup = nil
-	end
-	if self.btn_speeddown then
-		self.btn_speeddown:release()
-		self.btn_speeddown = nil
-	end
-	if self.root_wnd then
-		self.root_wnd:release()
-		self.root_wnd:removeFromParentAndCleanup(true)
+	if root_node then
+		root_node:removeFromParent(true)
 	end
 	if self.arrived_enemy_binder then
 		GlobalEventSystem:UnBind(self.arrived_enemy_binder)
@@ -133,6 +85,100 @@ function GameInfoView:__delete( )
 		GlobalEventSystem:UnBind(self.speeddown_binder)
 		self.speeddown_binder = nil
 	end
+end
+
+--打开过程是否播放完成了
+function GameInfoView:IsOpenFinished()
+	return self.open_finished
+end
+
+function GameInfoView:PlayOpenAnim()
+	self.open_finished = false
+
+	if self.root_node then
+		self.root_node:setPosition(cc.p(0, -self.bg_height))
+		local move_act = cc.MoveTo:create(0.25, cc.p(0, 0))
+		self.root_node:runAction(move_act)
+	end
+
+	--把按钮依次弹出
+	self.btn_back:setScale(0)
+	self.btn_pause:setScale(0)
+	self.btn_speed_up:setScale(0)
+
+	local scale1 = cc.ScaleTo:create(0.2, 1.2)
+	local scale2 = cc.ScaleTo:create(0.05, 1)
+	self.btn_back:runAction( cc.Sequence:create( cc.DelayTime:create(0.2), scale1, scale2))
+	self.btn_pause:runAction( cc.Sequence:create( cc.DelayTime:create(0.3), scale1:clone(), scale2:clone()))
+	self.btn_speed_up:runAction( cc.Sequence:create( cc.DelayTime:create(0.4), scale1:clone(), scale2:clone()))
+	local total_t = 0.4 + 0.25
+
+	--当所有按钮都弹出后，再绑定它们的点击事件
+	local bind_touch_events_func = function ()
+		local back_func = function(target, event_type)
+			if event_type == ccui.TouchEventType.ended then
+				print("back_func")
+			end
+			return true
+		end
+		local pause_func = function(target, event_type)
+			if event_type == ccui.TouchEventType.ended then
+				print("pause_func")
+
+				self.btn_pause:setEnabled(false)
+				self.btn_go_on:setEnabled(true)
+				local jump_act = cc.JumpBy:create(0.7, cc.p(0,0), 6, 1)
+				self.btn_go_on:runAction( cc.RepeatForever:create( jump_act))
+			end
+			return true
+		end
+		local goon_func = function (target, event_type)
+			if event_type == ccui.TouchEventType.ended then
+				print("goon_func")
+
+				self.btn_pause:setEnabled(true)
+				self.btn_go_on:setEnabled(false)
+				self.btn_go_on:stopAllActions()
+			end
+			return true		
+		end
+		local speed_up_func = function (target, event_type)
+			if event_type == ccui.TouchEventType.ended then
+				print("speed_up_func")
+				self.btn_speed_up:setEnabled(false)
+				self.btn_speed_down:setEnabled(true)
+				local jump_act = cc.JumpBy:create(0.7, cc.p(0,0), 6, 1)
+				self.btn_speed_down:runAction( cc.RepeatForever:create( jump_act))
+			end
+			return true		
+		end
+		local speed_down_func = function (target, event_type)
+			if event_type == ccui.TouchEventType.ended then
+				print("speed_down_func")
+				self.btn_speed_up:setEnabled(true)
+				self.btn_speed_down:setEnabled(false)
+				self.btn_speed_down:stopAllActions()
+			end
+			return true		
+		end
+		self.btn_back:setTouchEnabled(true)
+		self.btn_pause:setTouchEnabled(true)
+		self.btn_go_on:setTouchEnabled(true)
+		self.btn_speed_up:setTouchEnabled(true)
+		self.btn_speed_down:setTouchEnabled(true)
+
+		self.btn_back:addTouchEventListener(back_func)
+		self.btn_pause:addTouchEventListener(pause_func)
+		self.btn_go_on:addTouchEventListener(goon_func)
+		self.btn_speed_up:addTouchEventListener(speed_up_func)
+		self.btn_speed_down:addTouchEventListener(speed_down_func)
+
+
+		self.open_finished = true
+	end	
+
+	local call_act = cc.CallFunc:create(bind_touch_events_func) 
+	self.bg:runAction( cc.Sequence:create( cc.DelayTime:create(total_t), call_act))
 end
 
 function GameInfoView:InitEvents( )
@@ -158,7 +204,7 @@ function GameInfoView:InitEvents( )
 		local func = function ()
 			if self.show_pause_btn then
 				self.show_pause_btn = false
-				self.btn_pause:removeFromParentAndCleanup(false)
+				self.btn_pause:removeFromParent(false)
 				self.root_wnd:addChild(self.btn_resume)
 			end
 		end
@@ -170,7 +216,7 @@ function GameInfoView:InitEvents( )
 		local func = function ()
 			if not self.show_pause_btn then
 				self.show_pause_btn = true
-				self.btn_resume:removeFromParentAndCleanup(false)
+				self.btn_resume:removeFromParent(false)
 				self.root_wnd:addChild(self.btn_pause)
 			end
 		end
@@ -182,7 +228,7 @@ function GameInfoView:InitEvents( )
 		local func = function ()
 			if self.show_speedup_btn then
 				self.show_speedup_btn = false
-				self.btn_speedup:removeFromParentAndCleanup(false)
+				self.btn_speedup:removeFromParent(false)
 				self.root_wnd:addChild(self.btn_speeddown)
 			end
 		end
@@ -194,7 +240,7 @@ function GameInfoView:InitEvents( )
 		local func = function ()
 			if not self.show_speedup_btn then
 				self.show_speedup_btn = true
-				self.btn_speeddown:removeFromParentAndCleanup(false)
+				self.btn_speeddown:removeFromParent(false)
 				self.root_wnd:addChild(self.btn_speedup)
 			end
 		end

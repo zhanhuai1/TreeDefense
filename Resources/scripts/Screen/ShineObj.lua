@@ -24,7 +24,7 @@ function ShineObj:__init(pos, angle, zorder)
 	self.sprite:setPosition(pos)
 	self:SetRotation(angle)
 
-	Glo.Scene:addChild(self.sprite, zorder)
+	-- Glo.Scene:addChild(self.sprite, zorder)
 
 	self.target_angle = self.rotate_angle	--目标角度
 	self.last_change_rotate_time = 0		--最后一次调整目标角度的时间点，每隔几秒才进行一次调整
@@ -38,7 +38,7 @@ function ShineObj:__init(pos, angle, zorder)
 end
 
 function ShineObj:__delete()
-	self.sprite:removeFromParentAndCleanup(true)
+	self.sprite:removeFromParent(true)
 	self.sprite = nil
 
 	if self.sin_scale_handler then

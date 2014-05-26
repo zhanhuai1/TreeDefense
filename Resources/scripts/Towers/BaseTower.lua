@@ -1,4 +1,4 @@
-BaseTower = BaseTower or BaseClass()
+BaseTower = BaseTower or BaseClass(BuildObj)
 
 function BaseTower:__init(parent_map, id, tile_x, tile_y, config)
 	self.obj_id = id
@@ -46,7 +46,7 @@ function BaseTower:__init(parent_map, id, tile_x, tile_y, config)
 end
 
 function BaseTower:__delete()
-	self.base_node:removeFromParentAndCleanup(true)
+	self.base_node:removeFromParent(true)
 	cc.Director:getInstance():removeObjFromSAP(self.sap_handle)
 end
 

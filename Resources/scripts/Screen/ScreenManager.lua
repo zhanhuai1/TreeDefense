@@ -1,7 +1,3 @@
-require("scripts.Screen.BaseScreen")
-require("scripts.Screen.GameScreen")
-require("scripts.Screen.MainMenuScreen")
-require("scripts.Screen.SelectMapScreen")
 
 ScreenManager = ScreenManager or BaseClass()
 
@@ -39,8 +35,8 @@ function ScreenManager:InitEvents()
 	end
 	GlobalEventSystem:Bind(EventName.GoSelectMap, go_select_map)
 
-	local go_game_screen = function (map_info)
-		self:GoGameScreen(map_info)
+	local go_game_screen = function (chapter, level)
+		self:GoGameScreen(chapter, level)
 	end
 	GlobalEventSystem:Bind(EventName.GoGame, go_game_screen)
 end
@@ -67,11 +63,11 @@ function ScreenManager:GoSelectMapScreen()
 	self.cur_screen:Enter()
 end
 
-function ScreenManager:GoGameScreen(map_info)
+function ScreenManager:GoGameScreen(chapter, level)
 	if self.cur_screen then
 		self.cur_screen:Exit()
 	end
 	self.cur_screen = self.game_screen
-	self.cur_screen:Enter(map_info)
+	self.cur_screen:Enter(chapter, level)
 end
 

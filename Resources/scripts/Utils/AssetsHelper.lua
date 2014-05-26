@@ -1,101 +1,149 @@
 
 AssetsHelper = AssetsHelper or {}
 
+--创建指定动画的Animation，如果没有该动画就返回nil，内部使用，外部接口用CreateAnimSprite
+function AssetsHelper._createAnimation(anim_name, delay)
+	local frame_count = 0
+	local frame_list = {}
+	while true do
+		frame_name = string.format("%s_%d.png", anim_name, frame_count+1)
+		frame = cc.SpriteFrameCache:getInstance():getSpriteFrame(frame_name)
+		if frame ~= nil then
+			frame_count = frame_count + 1
+			frame_list[frame_count] = frame
+		else
+			break
+		end
+	end
+	-- print("__________createAnimation:", anim_name, frame_count)
+	if frame_count == 0 then
+		return nil
+	end
+	return cc.Animation:createWithSpriteFrames(frame_list, delay)
+end
+
 -----------------------------------------------------
 ----------------- RegisterAllFrames   ---------------
 -----------------------------------------------------
 function AssetsHelper.RegisterAllFrames()
 	cc.SpriteFrameCache:getInstance():addSpriteFrames("media/sheet_ui.plist")
 	cc.SpriteFrameCache:getInstance():addSpriteFrames("media/sheet_main_bg.plist")
+	cc.SpriteFrameCache:getInstance():addSpriteFrames("media/sheet_blocks.plist")
+	cc.SpriteFrameCache:getInstance():addSpriteFrames("media/sheet_red_tower2.plist")
+	cc.SpriteFrameCache:getInstance():addSpriteFrames("media/sheet_enemy1.plist")
 end
 
-function AssetsHelper.CreateTextureSprite(tex_name)
-	local sprite = cc.Sprite:create(tex_name)
+function AssetsHelper.PreloadAllMusic()
+	cc.SimpleAudioEngine:getInstance():preloadEffect("music/click.wav")
+end
+
+---------------------------------------------------------
+--创建动画或单帧sprite，
+--如果只有单帧就返回单帧sprite
+--如果有动画就返回动画sprite
+--如果有两个动画，就把第一个动画播一次，然后播第二个动画
+function AssetsHelper.CreateAnimSprite(anim_name, frame_delay, anim_name2, frame_delay2, anim1_loops)
+	frame_delay = frame_delay or 0.1
+	frame_delay2 = frame_delay2 or 0.1
+	local animation1 = AssetsHelper._createAnimation(anim_name, frame_delay)
+
+	if animation1 == nil then
+		--如果创建不出动画，就尝试创建单帧Sprite
+		local frame_name = anim_name
+		local sprite = cc.Sprite:createWithSpriteFrameName(frame_name..".png")
+		return sprite
+	else
+		--如果有第一个动画，但没有第二个动画，就让第一个动画循环
+		local sprite = cc.Sprite:create()
+		local animation2 = (anim_name2 ~= nil) and AssetsHelper._createAnimation(anim_name2, frame_delay2) or nil
+		if animation2 == nil then
+			animation1:setLoops(anim1_loops or 0xffffffff)
+			local animate_act = cc.Animate:create(animation1)
+			animate_act:setTag(Config.ActionTag.Anim)
+			sprite:runAction(animate_act)
+			return sprite
+
+		--如果两个动画都有，就让第一个动画播放1次，然后播第二个动画
+		else
+			animation1:setLoops(anim1_loops or 1)
+			animation2:setLoops(0xffffffff)
+			local anim_act1 = cc.Animate:create(animation1)
+			local anim_act2 = cc.Animate:create(animation2)
+			local sequence = cc.Sequence:create(anim_act1, anim_act2)
+			sequence:setTag(Config.ActionTag.Anim)
+			sprite:runAction(sequence)
+			return sprite
+		end
+	end
+end
+
+--只创建Action，不创建Csprite
+function AssetsHelper.CreateAnimAction(anim_name, frame_delay, anim_name2, frame_delay2, anim1_loops)
+	frame_delay = frame_delay or 0.1
+	frame_delay2 = frame_delay2 or 0.1
+	local animation1 = AssetsHelper._createAnimation(anim_name, frame_delay)		
+
+	if animation1 == nil then
+		return nil
+	end
+
+	local animation2 = (anim_name2 ~= nil) and AssetsHelper._createAnimation(anim_name2, frame_delay2) or nil
+	if animation2 == nil then
+		animation1:setLoops(anim1_loops or 0xffffffff)
+		local anim_act1 = cc.Animate:create(animation1)
+		anim_act1:setTag(Config.ActionTag.Anim)
+		return anim_act1
+
+	else
+		animation1:setLoops(anim1_loops or 1)
+		animation2:setLoops(0xffffffff)
+		local anim_act1 = cc.Animate:create(animation1)
+		local anim_act2 = cc.Animate:create(animation2)
+		local sequence = cc.Sequence:create(anim_act1, anim_act2)
+		sequence:setTag(Config.ActionTag.Anim)
+		return sequence
+	end
+end
+
+--获取frame信息
+function AssetsHelper.GetFrame(frame_name)
+	local frame = cc.SpriteFrameCache:getInstance():getSpriteFrame(frame_name)
+	return frame
+end
+
+--创建单帧的图片Sprite
+function AssetsHelper.CreateSprite(frame_name)
+	return cc.Sprite:createWithSpriteFrameName(frame_name)
+end
+
+--创建9宫格sprite
+function AssetsHelper.CreateScale9Sprite(frame_name, cap)
+	local sprite = nil
+	if cap == nil then
+		sprite = cc.Scale9Sprite:createWithSpriteFrameName(frame_name)
+	else
+		sprite = cc.Scale9Sprite:createWithSpriteFrameName(frame_name, cap)
+	end
 	return sprite
 end
-
---frame必须在上面已经加载过的plist里面
-function AssetsHelper.CreateFrameSprite(frame_name)
-	local sprite = cc.Sprite:createWithSpriteFrameName(frame_name)
-	return sprite
-end
-
 -----------------------------------------------------
 ----------------- GUI   ---------------------------
 -----------------------------------------------------
-function AssetsHelper.CreateUIScaleSprite(frame_name)
-	local frame_info = g_frames_config[frame_name]
-	if frame_info then
-		local sprite = CCScale9Sprite:create(frame_info.texture, frame_info.rect)
-		sprite:setContentSize(frame_info.rect.size)
-		return sprite
-	end
-	return nil
-end
 
-function AssetsHelper.CreateButton(frame_name, sel_frame_name, label)
-	local normal_sprite = AssetsHelper.CreateUIScaleSprite(frame_name)
-	local sel_sprite = nil
-	if sel_frame_name ~= nil then
-		sel_sprite = AssetsHelper.CreateUIScaleSprite(sel_frame_name)
-	end
 
-	local btn = nil
-	btn = CCControlButton:create(normal_sprite)
-	btn:setContentSize(g_frames_config[frame_name].rect.size)
-	btn:setEnabled(true)
-	btn:setAdjustBackgroundImage(false)
+--创建按钮
+function AssetsHelper.CreateButton(nor_frame, sel_frame, dis_frame, func)
+	nor_frame = nor_frame or ""
+	sel_frame = sel_frame or ""
+	dis_frame = dis_frame or ""
+	local btn = ccui.Button:create()
+	btn:loadTextures(nor_frame, sel_frame, dis_frame, ccui.TextureResType.plistType)
+	btn:setPressedActionEnabled(true)
 	btn:setTouchEnabled(true)
+	if func ~= nil then
+		btn:addTouchEventListener(func)
+	end
 	return btn
 end
 
 
-function AssetsHelper.CreateLabelTTF(font_name)
-	local cfg = g_fonts_config[font_name]
-	if cfg == nil then
-		cfg = g_fonts_config["Common14"]
-	end
-	local label = CCLabelTTF:create("", cfg.name, cfg.size)
-	return label
-end
-
---------------------------------------------------
------------- Sprite ------------------------------
---------------------------------------------------
-function AssetsHelper.CreateTextureSprite(tex_name)
-	local sprite = cc.Sprite:create(tex_name)
-	return sprite
-end
-
--- function AssetsHelper.CreateFrameSprite(frame_name)
--- 	local frame_info = g_frames_config[frame_name]
--- 	if frame_info then
--- 		local sprite = CCSprite:create(frame_info.texture, frame_info.rect)
--- 		return sprite
--- 	end
--- 	return nil
--- end
-
-function AssetsHelper.CreateAnimateAction(anim_name)
-	local anim_frames = g_animations_config[anim_name]
-	if anim_frames == nil then
-		return nil
-	end
-
-	local frames_array = CCArray:create()
-	for i=1, #anim_frames do
-		local f_def = anim_frames[i]
-		local tex = cc.Director:getInstance():getTextureCache():addImage(f_def.texture)
-		local rect = CCRectMake(f_def.x, f_def.y, f_def.w, f_def.h)
-		local frame = CCSpriteFrame:createWithTexture(tex, rect)
-		if f_def.anchor_x ~= nil then
-			frame:setOffset(cc.p(-f_def.anchor_x + math.floor(f_def.w / 2), -f_def.anchor_y + math.floor(f_def.h / 2)))
-		end
-		frames_array:addObject(frame)
-	end
-
-	local animation = CCAnimation:createWithSpriteFrames(frames_array, 0.1)
-	local animate_action = CCAnimate:create(animation)
-
-	return animate_action
-end

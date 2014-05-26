@@ -122,14 +122,23 @@ end
 
 --从格子坐标转出格子中心点坐标,，格子从1开始计
 function Utils.TileToPixel(tp)
-	local px = tp.x * Config.TileSize.width - Config.TileSize.width / 2
-	local py = tp.y * Config.TileSize.height - Config.TileSize.height / 2
+	local px = tp.x * Config.TileSize - Config.TileSize / 2
+	local py = tp.y * Config.TileSize - Config.TileSize / 2
 	return cc.p(px, py)
 end
 
 --从像素坐标转出所在格子的坐标，格子从1开始计
 function Utils.PixelToTile(pp)
-	local tx = math.floor(pp.x / Config.TileSize.width) + 1
-	local ty = math.floor(pp.y / Config.TileSize.height) + 1
+	local tx = math.floor(pp.x / Config.TileSize) + 1
+	local ty = math.floor(pp.y / Config.TileSize) + 1
 	return cc.p(tx, ty)
+end
+
+function Utils.P1ToP2(p1, p2, p)
+	return p1 + p * (p2-p1)
+end
+
+--格子坐标是否越界
+function Utils.IsTileValid(x, y )
+	return (x > 0 and x <= Config.MapTilesX and y > 0 and y <= Config.MapTilesY)
 end

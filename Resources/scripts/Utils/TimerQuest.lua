@@ -6,13 +6,13 @@ function TimerQuestItem:__init(func, delta_time, time_len)
 	self.next_time = (delta_time==-1) and -1 or Glo.RunningTime + delta_time
 	self.end_time = (time_len==-1) and -1 or Glo.RunningTime + time_len
 end
-function TimerQuestItem:Update(now_time)
+function TimerQuestItem:Update(delta_time, now_time)
 	--先执行
 	if self.next_time == -1 then
-		self.func(Glo.RunningTime)
+		self.func(delta_time, now_time)
 	else
-		while now_time >= self.next_time 
-			self.func(self.next_time)
+		while now_time >= self.next_time do
+			self.func(self.delta_time, self.next_time)
 			self.next_time = self.next_time + self.delta_time
 		end
 	end
@@ -43,7 +43,7 @@ function TimerQuest:Update(delta_time, now_time)
 	--循环调用的quest
 	for id, quest in pairs(self.period_quest_list) do
 		--刷新item，如果返回true，就删除之
-		if quest:Update(now_time) then
+		if quest:Update(delta_time, now_time) then
 			quest:DeleteMe()
 			self.period_quest_list[id] = nil
 		end
@@ -51,10 +51,11 @@ function TimerQuest:Update(delta_time, now_time)
 
 	--调用一次的quest，调用一次就删除
 	for id, quest in pairs(self.delay_quest_list) do
-		quest:Update()
-		quest:DeleteMe()
+		if quest:Update() then
+			quest:DeleteMe()
+			self.delay_quest_list[id] = nil
+		end
 	end
-	self.delay_quest_list = {}
 end
 
 function TimerQuest:AddPeriodQuest(func, delta_time, time_len)

@@ -1,5 +1,6 @@
 g_tower_types = 
 {
+	
 	Base = 
 	{
 		main_sprite = "red_stat",
